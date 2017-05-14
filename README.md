@@ -1,4 +1,4 @@
-![Command Cougar](https://raw.githubusercontent.com/surfandneptune/CommandCougar/master/Assets/logo-padded.png)
+![Command Cougar](https://cloud.githubusercontent.com/assets/4934383/26037640/402d9fd4-38c5-11e7-928a-3cbbb59ef335.png)
 
 An elegant pure Swift library for building command line applications.
 
