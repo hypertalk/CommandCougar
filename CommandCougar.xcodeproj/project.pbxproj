@@ -7,9 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		557EA50F1EC9258000FF2748 /* CommandCougar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 557EA50E1EC9258000FF2748 /* CommandCougar.swift */; };
 		OBJ_26 /* Command.Description.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_8 /* Command.Description.swift */; };
 		OBJ_27 /* Command.Evaluation.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_9 /* Command.Evaluation.swift */; };
-		OBJ_28 /* Dictionary-Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_10 /* Dictionary-Ext.swift */; };
+		OBJ_28 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_10 /* Extensions.swift */; };
 		OBJ_29 /* Flag.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_11 /* Flag.swift */; };
 		OBJ_30 /* FlagIndexable.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_12 /* FlagIndexable.swift */; };
 		OBJ_31 /* Option.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_13 /* Option.swift */; };
@@ -29,7 +30,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		OBJ_10 /* Dictionary-Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Dictionary-Ext.swift"; sourceTree = "<group>"; };
+		557EA50E1EC9258000FF2748 /* CommandCougar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommandCougar.swift; sourceTree = "<group>"; };
+		OBJ_10 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		OBJ_11 /* Flag.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Flag.swift; sourceTree = "<group>"; };
 		OBJ_12 /* FlagIndexable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlagIndexable.swift; sourceTree = "<group>"; };
 		OBJ_13 /* Option.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Option.swift; sourceTree = "<group>"; };
@@ -103,11 +105,12 @@
 			children = (
 				OBJ_8 /* Command.Description.swift */,
 				OBJ_9 /* Command.Evaluation.swift */,
-				OBJ_10 /* Dictionary-Ext.swift */,
+				OBJ_10 /* Extensions.swift */,
 				OBJ_11 /* Flag.swift */,
 				OBJ_12 /* FlagIndexable.swift */,
 				OBJ_13 /* Option.swift */,
 				OBJ_14 /* Parameter.swift */,
+				557EA50E1EC9258000FF2748 /* CommandCougar.swift */,
 			);
 			path = Sources;
 			sourceTree = SOURCE_ROOT;
@@ -181,10 +184,11 @@
 			files = (
 				OBJ_26 /* Command.Description.swift in Sources */,
 				OBJ_27 /* Command.Evaluation.swift in Sources */,
-				OBJ_28 /* Dictionary-Ext.swift in Sources */,
+				OBJ_28 /* Extensions.swift in Sources */,
 				OBJ_29 /* Flag.swift in Sources */,
 				OBJ_30 /* FlagIndexable.swift in Sources */,
 				OBJ_31 /* Option.swift in Sources */,
+				557EA50F1EC9258000FF2748 /* CommandCougar.swift in Sources */,
 				OBJ_32 /* Parameter.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -1,5 +1,5 @@
 //
-//  FlagIndexable.swift
+//  CommandCougar.swift
 //  CommandCougar
 //
 //  Copyright (c) 2017 Surf & Neptune LLC (http://surfandneptune.com/)
@@ -25,38 +25,11 @@
 
 import Foundation
 
-
-/// A somthing flagIndexeable if it contains a flag value.
-/// Used by Option.Description and Option.Evaluation
-public protocol FlagIndexable {
-	var flag: Option.Flag { get }
-}
-
-public extension Array where Element: FlagIndexable {
-
-	/// Allows for subscripting of this array by flagName
-	///
-	/// - Parameter flagName: The flagName
-	public subscript (flagName: String) -> Element? {
-		return first(where: { $0.flag == flagName })
-	}
-
-	/// Check if this array contains a Element equal to the given FlagIndexable
-	///
-	/// - Parameter element: The FlagIndexable we are looking for
-	/// - Returns: True if found
-	public func contains(_ element: FlagIndexable) -> Bool {
-		return contains(where: { $0.flag == element.flag })
-	}
-}
-
-///
-public protocol CommandIndexable {
-	var name: String { get }
-}
-
-public extension Array where Element: CommandIndexable {
-	public subscript(commandName: String) -> Element? {
-		return first(where: { $0.name == commandName })
+public struct CommandCougar {
+	public enum Errors: Error {
+		case callback(String)
+		case parse(String)
+		case invalidParameterCount(String)
+		case invalidFlag(String)
 	}
 }

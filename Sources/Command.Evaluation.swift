@@ -101,9 +101,9 @@ public extension Command {
 		///
 		/// - Throws: Error if evaluation is malformed
 		public func validate() throws {
-			options.forEach { (option) in
+			try options.forEach { (option) in
 				guard describer.options.contains(option) else {
-					fatalError(option.description)
+					throw CommandCougar.Errors.invalidFlag(option.description)
 				}
 			}
 
@@ -111,7 +111,7 @@ public extension Command {
 				parameters.count <= describer.maxParameterCount,
 				parameters.count >= describer.minParameterCount
 			else {
-				fatalError("poop")
+				throw CommandCougar.Errors.invalidParameterCount("")
 			}
 		}
 
