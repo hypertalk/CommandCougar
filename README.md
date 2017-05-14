@@ -17,7 +17,7 @@ An elegant pure Swift library for building command line applications.
 
 - Mac OS X 10.10+ / Ubuntu 14.10
 - Xcode 8
-
+- Swift 3
 ---
 
 ## Usage
@@ -220,12 +220,6 @@ This will perform three callbacks:
 
 ## Installation
 
-
-
-### CocoaPods
-
-
-
 ### [Swift Package Manager](https://github.com/apple/swift-package-manager)
 
 ```swift
@@ -233,37 +227,6 @@ dependencies: [
     .Package(url: "https://github.com/surfandneptune/CommandCougar.git", majorVersion: 1)
 ]
 ```
-
-### Carthage
-
-[Carthage](https://github.com/Carthage/Carthage) is a decentralized dependency manager that automates the process of adding frameworks to your Cocoa application.
-
-You can install Carthage with [Homebrew](http://brew.sh/) using the following command:
-
-``` bash
-$ brew update
-$ brew install carthage
-```
-
-To integrate CommandCougar into your Xcode project using Carthage, specify it in your `Cartfile`:
-
-``` ogdl
-
-```
-
----
-
-## FAQ
-
-
-
-## Credits
-
-
-
-## Changelog
-
-
 
 ## License
 
