@@ -177,7 +177,7 @@ public struct Command {
 
 				if let subCommand = subCommands.first(where: { $0.name == next }) {
 					evaluation.subEvaluation =  try subCommand.subEvaluate(arguments: argsList)
-					//try evaluation.validate()
+					try evaluation.validate()
 					return evaluation
 
 				}
@@ -197,7 +197,7 @@ public struct Command {
 
 			}
 
-			//try evaluation.validate()
+			try evaluation.validate()
 
 			return evaluation
 		}
