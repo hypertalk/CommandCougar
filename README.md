@@ -7,7 +7,7 @@ An elegant pure Swift library for building command line applications.
 
 - [x] Light weight, simple, composed with [pure value types.](https://developer.apple.com/videos/play/wwdc2015/414/)
 - [x] Auto generated help menus for main command and sub-commands.
-- [x] Help menus are format is based on [swift package manager](https://github.com/apple/swift-package-manager)
+- [x] Help menu format is based on [swift package manager](https://github.com/apple/swift-package-manager)
 - [x] Supports multi command callbacks.
 - [x] Swift 3 compatibility
 - [x] Zero dependency
