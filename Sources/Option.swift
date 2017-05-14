@@ -32,7 +32,7 @@ public struct Option {
 		/// A static help description attached to each command
 		public static let help = Description(
 			flag: .both(short: "h", long: "help"),
-			overview: "The Help Meny",
+			overview: "The help menu",
 			parameterName: nil)
 
 		/// The flag for this option
@@ -58,8 +58,9 @@ public struct Option {
 		public var helpText: String {
 			if let p = parameterName {
 				return "\(flag.description)=\(p)"
+					.padding(toLength: 20, withPad: " ", startingAt: 0) + overview
 			}
-			return "\(flag.description)"
+			return "\(flag.description)".padding(toLength: 30, withPad: " ", startingAt: 0) + overview
 
 		}
 

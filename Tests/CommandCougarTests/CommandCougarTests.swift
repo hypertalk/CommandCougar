@@ -84,7 +84,7 @@ class CommandCougarTests: XCTestCase {
 							overview: "Increase verbosity of informational output"),
 						Option.Description(
 							flag: .long("enable-prefetching"),
-							overview: "Increase verbosity of informational output")
+							overview: "Enable prefetching in resolver")
 					],
 					subCommands: [
 						Command.Description(
@@ -105,6 +105,7 @@ class CommandCougarTests: XCTestCase {
 			let args = ["swift", "package", "-v", "update", "--repin"]
 			let evaluation: Command.Evaluation = try swiftCommand.evaluate(arguments: args)
 			try evaluation.performCallbacks()
+			print(evaluation.describer.helpText)
 		} catch {
 			print(error)
 		}
@@ -121,7 +122,7 @@ class CommandCougarTests: XCTestCase {
 			passCallback = true
 		}
 		
-		let args = "package -v update --repin".components(separatedBy: " ")
+		let args = "swift package -v update --repin".components(separatedBy: " ")
 	
 		do {
 			

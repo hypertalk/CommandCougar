@@ -103,7 +103,7 @@ public extension Command {
 		public func validate() throws {
 			options.forEach { (option) in
 				guard describer.options.contains(option) else {
-					fatalError("poop")
+					fatalError(option.description)
 				}
 			}
 

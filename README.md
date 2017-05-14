@@ -113,6 +113,42 @@ evaluation["package"]?.options["enable-prefetching"] // results in nil
 evaluation["package update"]?.options["repin"]?.flag.longName // results in "repin"
 ```
 
+### Help menu automatically generated
+
+The help menu for each subcommand is auto generated and the option is added
+to the command.
+
+``` shell
+$ swift --help
+OVERVIEW: Swift Program
+
+USAGE: swift [option] <command>
+
+COMMANDS:
+   package                       Perform operations on Swift packages
+
+OPTIONS:
+   -h, --help                    The help menu
+```
+
+Help is also generated for subcommands
+
+``` shell
+$ swift package --help
+OVERVIEW: Perform operations on Swift packages
+
+USAGE: swift package [option] <command>
+
+COMMANDS:
+   update                        Update package dependencies
+
+OPTIONS:
+   -v, --verbose                 Increase verbosity of informational output
+   --enable-prefetching          Enable prefetching in resolver
+   -h, --help                    The help menu
+```
+
+
 ### Creating a Command.Description
 
 The `Command.Description` struct is used to represent how this command should be
