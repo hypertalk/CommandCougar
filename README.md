@@ -2,7 +2,7 @@
 
 An elegant pure Swift library for building command line applications.
 
-(https://travis-ci.org/surfandneptune/CommandCougar.svg?branch=master)
+![Build Status](https://travis-ci.org/surfandneptune/CommandCougar.svg?branch=master)
 
 ## Features
 
