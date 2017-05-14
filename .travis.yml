@@ -1,0 +1,7 @@
+script:
+  - swift build
+  - swift test
+env: JOB=SPM
+os: osx
+osx_image: xcode8.3
+language: objective-c
