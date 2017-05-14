@@ -1,0 +1,37 @@
+{
+  "DVTSourceControlWorkspaceBlueprintPrimaryRemoteRepositoryKey" : "E14DE353A948240C39095DABF383BE5E641F916D",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyRepositoryLocationsKey" : {
+
+  },
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyStatesKey" : {
+    "A96F168AC54F34C1703AC88FF7E752C7B54CB769" : 9223372036854775807,
+    "86CB7327E7EAC760107B305CCE441C83E1AD5FDF" : 9223372036854775807,
+    "E14DE353A948240C39095DABF383BE5E641F916D" : 9223372036854775807
+  },
+  "DVTSourceControlWorkspaceBlueprintIdentifierKey" : "5115B80D-B5C7-414E-A8BE-5F8979F72E32",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyPathsKey" : {
+    "A96F168AC54F34C1703AC88FF7E752C7B54CB769" : "CommandCougar\/.build\/checkouts\/Clover.git--3850971059131373564\/",
+    "86CB7327E7EAC760107B305CCE441C83E1AD5FDF" : "CommandCougar\/.build\/checkouts\/Math.git--1781573192655692957\/",
+    "E14DE353A948240C39095DABF383BE5E641F916D" : "CommandCougar\/"
+  },
+  "DVTSourceControlWorkspaceBlueprintNameKey" : "CommandCougar",
+  "DVTSourceControlWorkspaceBlueprintVersion" : 204,
+  "DVTSourceControlWorkspaceBlueprintRelativePathToProjectKey" : "CommandCougar.xcodeproj",
+  "DVTSourceControlWorkspaceBlueprintRemoteRepositoriesKey" : [
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "\/Users\/ashley\/Documents\/CommandCougar\/.build\/repositories\/Math.git--1781573192655692957",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "86CB7327E7EAC760107B305CCE441C83E1AD5FDF"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "\/Users\/ashley\/Documents\/CommandCougar\/.build\/repositories\/Clover.git--3850971059131373564",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "A96F168AC54F34C1703AC88FF7E752C7B54CB769"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "gitlab.surfandneptune.com:swift\/CommandCougar.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "E14DE353A948240C39095DABF383BE5E641F916D"
+    }
+  ]
+}

@@ -1,0 +1,437 @@
+// !$*UTF8*$!
+{
+   archiveVersion = "1";
+   objectVersion = "46";
+   objects = {
+      OBJ_1 = {
+         isa = "PBXProject";
+         attributes = {
+            LastUpgradeCheck = "9999";
+         };
+         buildConfigurationList = OBJ_2;
+         compatibilityVersion = "Xcode 3.2";
+         developmentRegion = "English";
+         hasScannedForEncodings = "0";
+         knownRegions = (
+            "en",
+         );
+         mainGroup = OBJ_5;
+         productRefGroup = OBJ_18;
+         projectDirPath = ".";
+         targets = (
+            OBJ_21,
+            OBJ_34,
+         );
+      };
+      OBJ_10 = {
+         isa = "PBXFileReference";
+         path = "Dictionary-Ext.swift";
+         sourceTree = "<group>";
+      };
+      OBJ_11 = {
+         isa = "PBXFileReference";
+         path = "Flag.swift";
+         sourceTree = "<group>";
+      };
+      OBJ_12 = {
+         isa = "PBXFileReference";
+         path = "FlagIndexable.swift";
+         sourceTree = "<group>";
+      };
+      OBJ_13 = {
+         isa = "PBXFileReference";
+         path = "Option.swift";
+         sourceTree = "<group>";
+      };
+      OBJ_14 = {
+         isa = "PBXFileReference";
+         path = "Parameter.swift";
+         sourceTree = "<group>";
+      };
+      OBJ_15 = {
+         isa = "PBXGroup";
+         children = (
+            OBJ_16,
+         );
+         name = "Tests";
+         path = "";
+         sourceTree = "SOURCE_ROOT";
+      };
+      OBJ_16 = {
+         isa = "PBXGroup";
+         children = (
+            OBJ_17,
+         );
+         name = "CommandCougarTests";
+         path = "Tests/CommandCougarTests";
+         sourceTree = "SOURCE_ROOT";
+      };
+      OBJ_17 = {
+         isa = "PBXFileReference";
+         path = "CommandCougarTests.swift";
+         sourceTree = "<group>";
+      };
+      OBJ_18 = {
+         isa = "PBXGroup";
+         children = (
+            OBJ_19,
+            OBJ_20,
+         );
+         name = "Products";
+         path = "";
+         sourceTree = "BUILT_PRODUCTS_DIR";
+      };
+      OBJ_19 = {
+         isa = "PBXFileReference";
+         path = "CommandCougar.framework";
+         sourceTree = "BUILT_PRODUCTS_DIR";
+      };
+      OBJ_2 = {
+         isa = "XCConfigurationList";
+         buildConfigurations = (
+            OBJ_3,
+            OBJ_4,
+         );
+         defaultConfigurationIsVisible = "0";
+         defaultConfigurationName = "Debug";
+      };
+      OBJ_20 = {
+         isa = "PBXFileReference";
+         path = "CommandCougarTests.xctest";
+         sourceTree = "BUILT_PRODUCTS_DIR";
+      };
+      OBJ_21 = {
+         isa = "PBXNativeTarget";
+         buildConfigurationList = OBJ_22;
+         buildPhases = (
+            OBJ_25,
+            OBJ_33,
+         );
+         dependencies = (
+         );
+         name = "CommandCougar";
+         productName = "CommandCougar";
+         productReference = OBJ_19;
+         productType = "com.apple.product-type.framework";
+      };
+      OBJ_22 = {
+         isa = "XCConfigurationList";
+         buildConfigurations = (
+            OBJ_23,
+            OBJ_24,
+         );
+         defaultConfigurationIsVisible = "0";
+         defaultConfigurationName = "Debug";
+      };
+      OBJ_23 = {
+         isa = "XCBuildConfiguration";
+         buildSettings = {
+            ENABLE_TESTABILITY = "YES";
+            FRAMEWORK_SEARCH_PATHS = (
+               "$(inherited)",
+               "$(PLATFORM_DIR)/Developer/Library/Frameworks",
+            );
+            HEADER_SEARCH_PATHS = (
+               "$(inherited)",
+            );
+            INFOPLIST_FILE = "CommandCougar.xcodeproj/CommandCougar_Info.plist";
+            LD_RUNPATH_SEARCH_PATHS = (
+               "$(TOOLCHAIN_DIR)/usr/lib/swift/macosx",
+            );
+            OTHER_LDFLAGS = (
+               "$(inherited)",
+            );
+            OTHER_SWIFT_FLAGS = (
+               "$(inherited)",
+            );
+            PRODUCT_BUNDLE_IDENTIFIER = "CommandCougar";
+            PRODUCT_MODULE_NAME = "$(TARGET_NAME:c99extidentifier)";
+            PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+            SKIP_INSTALL = "YES";
+            TARGET_NAME = "CommandCougar";
+         };
+         name = "Debug";
+      };
+      OBJ_24 = {
+         isa = "XCBuildConfiguration";
+         buildSettings = {
+            ENABLE_TESTABILITY = "YES";
+            FRAMEWORK_SEARCH_PATHS = (
+               "$(inherited)",
+               "$(PLATFORM_DIR)/Developer/Library/Frameworks",
+            );
+            HEADER_SEARCH_PATHS = (
+               "$(inherited)",
+            );
+            INFOPLIST_FILE = "CommandCougar.xcodeproj/CommandCougar_Info.plist";
+            LD_RUNPATH_SEARCH_PATHS = (
+               "$(TOOLCHAIN_DIR)/usr/lib/swift/macosx",
+            );
+            OTHER_LDFLAGS = (
+               "$(inherited)",
+            );
+            OTHER_SWIFT_FLAGS = (
+               "$(inherited)",
+            );
+            PRODUCT_BUNDLE_IDENTIFIER = "CommandCougar";
+            PRODUCT_MODULE_NAME = "$(TARGET_NAME:c99extidentifier)";
+            PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+            SKIP_INSTALL = "YES";
+            TARGET_NAME = "CommandCougar";
+         };
+         name = "Release";
+      };
+      OBJ_25 = {
+         isa = "PBXSourcesBuildPhase";
+         files = (
+            OBJ_26,
+            OBJ_27,
+            OBJ_28,
+            OBJ_29,
+            OBJ_30,
+            OBJ_31,
+            OBJ_32,
+         );
+      };
+      OBJ_26 = {
+         isa = "PBXBuildFile";
+         fileRef = OBJ_8;
+      };
+      OBJ_27 = {
+         isa = "PBXBuildFile";
+         fileRef = OBJ_9;
+      };
+      OBJ_28 = {
+         isa = "PBXBuildFile";
+         fileRef = OBJ_10;
+      };
+      OBJ_29 = {
+         isa = "PBXBuildFile";
+         fileRef = OBJ_11;
+      };
+      OBJ_3 = {
+         isa = "XCBuildConfiguration";
+         buildSettings = {
+            CLANG_ENABLE_OBJC_ARC = "YES";
+            COMBINE_HIDPI_IMAGES = "YES";
+            COPY_PHASE_STRIP = "NO";
+            DEBUG_INFORMATION_FORMAT = "dwarf";
+            DYLIB_INSTALL_NAME_BASE = "@rpath";
+            ENABLE_NS_ASSERTIONS = "YES";
+            GCC_OPTIMIZATION_LEVEL = "0";
+            MACOSX_DEPLOYMENT_TARGET = "10.10";
+            ONLY_ACTIVE_ARCH = "YES";
+            OTHER_SWIFT_FLAGS = (
+               "-DXcode",
+            );
+            PRODUCT_NAME = "$(TARGET_NAME)";
+            SDKROOT = "macosx";
+            SUPPORTED_PLATFORMS = (
+               "macosx",
+               "iphoneos",
+               "iphonesimulator",
+               "appletvos",
+               "appletvsimulator",
+               "watchos",
+               "watchsimulator",
+            );
+            SWIFT_ACTIVE_COMPILATION_CONDITIONS = "SWIFT_PACKAGE";
+            SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+            SWIFT_VERSION = "3.0";
+            USE_HEADERMAP = "NO";
+         };
+         name = "Debug";
+      };
+      OBJ_30 = {
+         isa = "PBXBuildFile";
+         fileRef = OBJ_12;
+      };
+      OBJ_31 = {
+         isa = "PBXBuildFile";
+         fileRef = OBJ_13;
+      };
+      OBJ_32 = {
+         isa = "PBXBuildFile";
+         fileRef = OBJ_14;
+      };
+      OBJ_33 = {
+         isa = "PBXFrameworksBuildPhase";
+         files = (
+         );
+      };
+      OBJ_34 = {
+         isa = "PBXNativeTarget";
+         buildConfigurationList = OBJ_35;
+         buildPhases = (
+            OBJ_38,
+            OBJ_40,
+         );
+         dependencies = (
+            OBJ_42,
+         );
+         name = "CommandCougarTests";
+         productName = "CommandCougarTests";
+         productReference = OBJ_20;
+         productType = "com.apple.product-type.bundle.unit-test";
+      };
+      OBJ_35 = {
+         isa = "XCConfigurationList";
+         buildConfigurations = (
+            OBJ_36,
+            OBJ_37,
+         );
+         defaultConfigurationIsVisible = "0";
+         defaultConfigurationName = "Debug";
+      };
+      OBJ_36 = {
+         isa = "XCBuildConfiguration";
+         buildSettings = {
+            EMBEDDED_CONTENT_CONTAINS_SWIFT = "YES";
+            FRAMEWORK_SEARCH_PATHS = (
+               "$(inherited)",
+               "$(PLATFORM_DIR)/Developer/Library/Frameworks",
+            );
+            HEADER_SEARCH_PATHS = (
+               "$(inherited)",
+            );
+            INFOPLIST_FILE = "CommandCougar.xcodeproj/CommandCougarTests_Info.plist";
+            LD_RUNPATH_SEARCH_PATHS = (
+               "@loader_path/../Frameworks",
+               "@loader_path/Frameworks",
+            );
+            OTHER_LDFLAGS = (
+               "$(inherited)",
+            );
+            OTHER_SWIFT_FLAGS = (
+               "$(inherited)",
+            );
+            TARGET_NAME = "CommandCougarTests";
+         };
+         name = "Debug";
+      };
+      OBJ_37 = {
+         isa = "XCBuildConfiguration";
+         buildSettings = {
+            EMBEDDED_CONTENT_CONTAINS_SWIFT = "YES";
+            FRAMEWORK_SEARCH_PATHS = (
+               "$(inherited)",
+               "$(PLATFORM_DIR)/Developer/Library/Frameworks",
+            );
+            HEADER_SEARCH_PATHS = (
+               "$(inherited)",
+            );
+            INFOPLIST_FILE = "CommandCougar.xcodeproj/CommandCougarTests_Info.plist";
+            LD_RUNPATH_SEARCH_PATHS = (
+               "@loader_path/../Frameworks",
+               "@loader_path/Frameworks",
+            );
+            OTHER_LDFLAGS = (
+               "$(inherited)",
+            );
+            OTHER_SWIFT_FLAGS = (
+               "$(inherited)",
+            );
+            TARGET_NAME = "CommandCougarTests";
+         };
+         name = "Release";
+      };
+      OBJ_38 = {
+         isa = "PBXSourcesBuildPhase";
+         files = (
+            OBJ_39,
+         );
+      };
+      OBJ_39 = {
+         isa = "PBXBuildFile";
+         fileRef = OBJ_17;
+      };
+      OBJ_4 = {
+         isa = "XCBuildConfiguration";
+         buildSettings = {
+            CLANG_ENABLE_OBJC_ARC = "YES";
+            COMBINE_HIDPI_IMAGES = "YES";
+            COPY_PHASE_STRIP = "YES";
+            DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+            DYLIB_INSTALL_NAME_BASE = "@rpath";
+            GCC_OPTIMIZATION_LEVEL = "s";
+            MACOSX_DEPLOYMENT_TARGET = "10.10";
+            OTHER_SWIFT_FLAGS = (
+               "-DXcode",
+            );
+            PRODUCT_NAME = "$(TARGET_NAME)";
+            SDKROOT = "macosx";
+            SUPPORTED_PLATFORMS = (
+               "macosx",
+               "iphoneos",
+               "iphonesimulator",
+               "appletvos",
+               "appletvsimulator",
+               "watchos",
+               "watchsimulator",
+            );
+            SWIFT_ACTIVE_COMPILATION_CONDITIONS = "SWIFT_PACKAGE";
+            SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+            SWIFT_VERSION = "3.0";
+            USE_HEADERMAP = "NO";
+         };
+         name = "Release";
+      };
+      OBJ_40 = {
+         isa = "PBXFrameworksBuildPhase";
+         files = (
+            OBJ_41,
+         );
+      };
+      OBJ_41 = {
+         isa = "PBXBuildFile";
+         fileRef = OBJ_19;
+      };
+      OBJ_42 = {
+         isa = "PBXTargetDependency";
+         target = OBJ_21;
+      };
+      OBJ_5 = {
+         isa = "PBXGroup";
+         children = (
+            OBJ_6,
+            OBJ_7,
+            OBJ_15,
+            OBJ_18,
+         );
+         path = "";
+         sourceTree = "<group>";
+      };
+      OBJ_6 = {
+         isa = "PBXFileReference";
+         explicitFileType = "sourcecode.swift";
+         path = "Package.swift";
+         sourceTree = "<group>";
+      };
+      OBJ_7 = {
+         isa = "PBXGroup";
+         children = (
+            OBJ_8,
+            OBJ_9,
+            OBJ_10,
+            OBJ_11,
+            OBJ_12,
+            OBJ_13,
+            OBJ_14,
+         );
+         name = "Sources";
+         path = "Sources";
+         sourceTree = "SOURCE_ROOT";
+      };
+      OBJ_8 = {
+         isa = "PBXFileReference";
+         path = "Command.Description.swift";
+         sourceTree = "<group>";
+      };
+      OBJ_9 = {
+         isa = "PBXFileReference";
+         path = "Command.Evaluation.swift";
+         sourceTree = "<group>";
+      };
+   };
+   rootObject = OBJ_1;
+}

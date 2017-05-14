@@ -1,0 +1,9 @@
+stages:
+  - test
+
+test_project:
+  stage: test
+  script:
+    - swift test
+  tags:
+    - swift

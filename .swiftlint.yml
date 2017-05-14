@@ -1,0 +1,115 @@
+# +--------------------------------+--------+-------------+------------------------+-------------------------------------------------------------+
+# | identifier                     | opt-in | correctable | enabled in your config | configuration                                               |
+# +--------------------------------+--------+-------------+------------------------+-------------------------------------------------------------+
+# | closing_brace                  | no     | yes         | yes                    | warning                                                     |
+# | closure_spacing                | yes    | no          | no                     | warning                                                     |
+# | colon                          | no     | yes         | no                     | flexible_right_spacing: false                               |
+# | comma                          | no     | yes         | no                     | warning                                                     |
+# | conditional_returns_on_newline | yes    | no          | no                     | N/A                                                         |
+# | control_statement              | no     | no          | no                     | warning                                                     |
+# | custom_rules                   | no     | no          | yes                    | user-defined                                                |
+# | cyclomatic_complexity          | no     | no          | yes                    | warning: 10, error: 20                                      |
+# | empty_count                    | yes    | no          | yes                    | error                                                       |
+# | explicit_init                  | yes    | yes         | no                     | warning                                                     |
+# | file_length                    | no     | no          | yes                    | warning: 500, error: 1200                                   |
+# | force_cast                     | no     | no          | yes                    | warning                                                     |
+# | force_try                      | no     | no          | yes                    | warning                                                     |
+# | force_unwrapping               | yes    | no          | no                     | warning                                                     |
+# | function_body_length           | no     | no          | yes                    | warning: 40, error: 100                                     |
+# | function_parameter_count       | no     | no          | yes                    | warning: 5, error: 8                                        |
+# | leading_whitespace             | no     | yes         | yes                    | warning                                                     |
+# | legacy_cggeometry_functions    | no     | yes         | yes                    | warning                                                     |
+# | legacy_constant                | no     | yes         | yes                    | warning                                                     |
+# | legacy_constructor             | no     | yes         | yes                    | warning                                                     |
+# | legacy_nsgeometry_functions    | no     | yes         | yes                    | warning                                                     |
+# | line_length                    | no     | no          | yes                    | warning: 110                                                |
+# | mark                           | no     | no          | yes                    | warning                                                     |
+# | missing_docs                   | yes    | no          | yes                    | warning: source.lang.swift.accessibility.public             |
+# | nesting                        | no     | no          | yes                    | warning                                                     |
+# | opening_brace                  | no     | yes         | yes                    | warning                                                     |
+# | operator_whitespace            | no     | no          | yes                    | warning                                                     |
+# | overridden_super_call          | yes    | no          | no                     | warning, excluded: [[]], included: [["*"]]                  |
+# | private_outlet                 | yes    | no          | no                     | warning, allow_private_set: false                           |
+# | private_unit_test              | no     | no          | yes                    | warning: XCTestCase                                         |
+# | redundant_nil_coalesing        | yes    | no          | no                     | warning                                                     |
+# | return_arrow_whitespace        | no     | yes         | yes                    | warning                                                     |
+# | statement_position             | no     | yes         | yes                    | (statement_mode) default, (severity) warning                |
+# | switch_case_on_newline         | yes    | no          | no                     | N/A                                                         |
+# | todo                           | no     | no          | yes                    | warning                                                     |
+# | trailing_newline               | no     | yes         | yes                    | warning                                                     |
+# | trailing_semicolon             | no     | yes         | yes                    | warning                                                     |
+# | trailing_whitespace            | no     | yes         | yes                    | warning, ignores_empty_lines: false, ignores_comments: true |
+# | type_body_length               | no     | no          | yes                    | warning: 300, error: 400                                    |
+# | type_name                      | no     | no          | yes                    | (min_length) w: 4, (max_length) w/e: 40/50                  |
+# | valid_docs                     | no     | no          | yes                    | warning                                                     |
+# | valid_ibinspectable            | no     | no          | yes                    | warning                                                     |
+# | variable_name                  | no     | no          | yes                    | (min_length) w/e: 3/4, (max_length) w/e: 40/60              |
+# | vertical_whitespace            | no     | yes         | yes                    | warning                                                     |
+# +--------------------------------+--------+-------------+------------------------+-------------------------------------------------------------+
+
+disabled_rules: # rule identifiers to exclude from running
+  - colon
+  - comma
+  - control_statement
+  - variable_name
+  - trailing_whitespace
+  - missing_docs
+  - operator_whitespace
+  - type_name
+  - nesting
+
+opt_in_rules: # some rules are only opt-in
+  - empty_count
+  - missing_docs
+  # Find all the available rules by running:
+  # swiftlint rules
+included: # paths to include during linting. `--path` is ignored if present.
+  - Sources
+excluded: # paths to ignore during linting. Takes precedence over `included`.
+
+# configurable rules can be customized from this configuration file
+# binary rules can set their severity level
+force_cast: warning # implicitly
+force_try:
+  severity: warning # explicitly
+# rules that have both warning and error levels, can set just the warning level
+# implicitly
+line_length: 110
+# they can set both implicitly with an array
+type_body_length:
+  - 300 # warning
+  - 400 # error
+# or they can set both explicitly
+file_length:
+  warning: 500
+  error: 1200
+# naming rules can set warnings/errors for min_length and max_length
+# additionally they can set excluded names
+type_name:
+  min_length: 4 # only warning
+  max_length: # warning and error
+    warning: 40
+    error: 50
+  excluded: iPhone # excluded via string
+variable_name:
+  min_length: # only min_length
+    error: 4 # only error
+  excluded: # excluded via string array
+    - id
+    - URL
+    - GlobalAPIKey
+reporter: "xcode" # reporter type (xcode, json, csv, checkstyle, junit)
+
+custom_rules:
+  pirates_beat_ninjas: # rule identifier
+    included: ".*.swift" # regex that defines paths to include during linting. optional.
+    name: "Pirates Beat Ninjas" # rule name. optional.
+    regex: "([n,N]inja)" # matching pattern
+    match_kinds: # SyntaxKinds to match. optional.
+      - comment
+      - identifier
+    message: "Pirates are better than ninjas." # violation message. optional.
+    severity: warning # violation severity. optional.
+  no_hiding_in_strings:
+    regex: "([n,N]inja)"
+    match_kinds: string
