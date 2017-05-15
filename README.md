@@ -205,7 +205,7 @@ evaluation["package"]?.options["v"]?.flag.shortName // results in "v"
 
 evaluation["package"]?.options["enable-prefetching"] // results in nil
 
-evaluation["package update"]?.options["repin"]?.flag.longName // results in "repin"
+evaluation["package"]?["update"]?.options["repin"]?.flag.longName // results in "repin"
 ```
 
 ### Help menu different for subcommands
