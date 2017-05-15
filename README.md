@@ -22,8 +22,8 @@ An elegant pure Swift library for building command line applications.
 ---
 
 ## Usage
-CommandCougar supports a main command as well as subcommands.  This is much like
-the swift package manager interface.  
+  CommandCougar supports a main command as well as subcommands.  This is much like
+  the swift package manager interface.  
 
 ### `Command`
 A command is a `struct` that is used to outline the structure of your command line interface. It can have either a list of subcommands or a list of (`.required` | `.optional`) parameters.
@@ -33,14 +33,14 @@ A command is a `struct` that is used to outline the structure of your command li
 
 ``` swift
 var helloCommand = Command(
-name: "hello",
-overview: "Say Hello",
-callback: { print($0.options, $0.parameters) },
-options: [
-Option(flag: .short("v"), overview: "Increase verbosity"),
-Option(flag: .short("w"), overview: "Wave hello")
-],
-parameters:[.optional("Name")])
+    name: "hello",
+    overview: "Say Hello",
+    callback: { print($0.options, $0.parameters) },
+    options: [
+        Option(flag: .short("v"), overview: "Increase verbosity"),
+        Option(flag: .short("w"), overview: "Wave hello")
+    ],
+    parameters:[.optional("Name")])
 ```
 
 #### Evaluating a `Command`
@@ -89,9 +89,9 @@ USAGE: hello [option] <command>
 COMMANDS:
 
 OPTIONS:
--h, --help                    The help menu
--v                            Increase verbosity
--w                            Wave hello
+   -h, --help                    The help menu
+   -v                            Increase verbosity
+   -w                            Wave hello
 ```
 
 ### `Options`
@@ -134,57 +134,57 @@ A command to express this list of arguments would be as follows:
 ``` swift
 /// Used for callback
 func echo(evaluation: Command.Evaluation) throws {
-print(
-"\(evaluation.name) evaluated with " +
-"options: \(evaluation.options) " +
-"and parameters \(evaluation.parameters)"
-)
+  print(
+    "\(evaluation.name) evaluated with " +
+    "options: \(evaluation.options) " +
+    "and parameters \(evaluation.parameters)"
+    )
 }
 
 let swiftCommand =
 Command(
-name: "swift",
-overview: "Swift Program",
-callback: echo,
-options: [],
-subCommands: [
-Command(
-name: "package",
-overview: "Perform operations on Swift packages",
-callback: echo,
-options: [
-Option(
-flag: .both(short: "v", long: "verbose"),
-overview: "Increase verbosity of informational output"),
-Option(
-flag: .long("enable-prefetching"),
-overview: "Increase verbosity of informational output")
-],
-subCommands: [
-Command(
-name: "update",
-overview: "Update package dependencies",
-callback: echo,
-options: [
-Option(
-flag: .long("repin"),
-overview: "Update without applying pins and repin the updated versions.")
-],
-subCommands: [])
-])
-])
+    name: "swift",
+    overview: "Swift Program",
+    callback: echo,
+    options: [],
+    subCommands: [
+        Command(
+            name: "package",
+            overview: "Perform operations on Swift packages",
+            callback: echo,
+            options: [
+                Option(
+                    flag: .both(short: "v", long: "verbose"),
+                    overview: "Increase verbosity of informational output"),
+                Option(
+                    flag: .long("enable-prefetching"),
+                    overview: "Increase verbosity of informational output")
+            ],
+            subCommands: [
+                Command(
+                    name: "update",
+                    overview: "Update package dependencies",
+                    callback: echo,
+                    options: [
+                        Option(
+                            flag: .long("repin"),
+                            overview: "Update without applying pins and repin the updated versions.")
+                    ],
+                    subCommands: [])
+            ])
+    ])
 ```
 ### Evaluating `Subcommands`
 When evaluating the root command all subcommands will also be evaluated and their callbacks will be fired.
 
 ``` swift
 do {
-// normally CommandLine.arguments
-let args = ["swift", "package", "-v", "update", "--repin"]
-let evaluation: Command.Evaluation = try swiftCommand.evaluate(arguments: args)
-try evaluation.performCallbacks()
+    // normally CommandLine.arguments
+    let args = ["swift", "package", "-v", "update", "--repin"]
+    let evaluation: Command.Evaluation = try swiftCommand.evaluate(arguments: args)
+    try evaluation.performCallbacks()
 } catch {
-print(error)
+    print(error)
 }
 
 // Output
@@ -219,12 +219,12 @@ OVERVIEW: Perform operations on Swift packages
 USAGE: swift package [option] <command>
 
 COMMANDS:
-update                        Update package dependencies
+   update                        Update package dependencies
 
 OPTIONS:
--v, --verbose                 Increase verbosity of informational output
---enable-prefetching          Enable prefetching in resolver
--h, --help                    The help menu
+   -v, --verbose                 Increase verbosity of informational output
+   --enable-prefetching          Enable prefetching in resolver
+   -h, --help                    The help menu
 ```
 ---
 
@@ -265,7 +265,7 @@ SUM:                             8            115            310            359
 
 ```swift
 dependencies: [
-.Package(url: "https://github.com/surfandneptune/CommandCougar.git", majorVersion: 1)
+    .Package(url: "https://github.com/surfandneptune/CommandCougar.git", majorVersion: 1)
 ]
 ```
 
