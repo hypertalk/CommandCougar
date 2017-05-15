@@ -49,5 +49,4 @@ internal extension Collection {
 		let _ = a.next()
 		return a.next()
 	}
-
 }

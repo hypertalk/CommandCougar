@@ -24,121 +24,60 @@
 //
 
 import Foundation
-public struct Option {
 
-	/// A struct for describing a option that a command is allowed to take in
-	public struct Description: FlagIndexable, CustomStringConvertible, Equatable {
 
-		/// A static help description attached to each command
-		public static let help = Description(
-			flag: .both(short: "h", long: "help"),
-			overview: "The help menu",
-			parameterName: nil)
-
-		/// The flag for this option
-		public var flag: Flag
-
-		/// The overview of this option used in the help menu
-		public var overview: String
-
-		/// The parameter name of this option.  If nil the option takes no parameter IE '-v'
-		public var parameterName: String? = nil
-
-		/// True if this option requires a parameter
-		public var requiresParameter: Bool {
-			return parameterName != nil
-		}
-
-		/// The description of this Option.Description for CustomStringConvertible
-		public var description: String {
-			return "(\(flag.description)) \(overview) \(parameterName ?? "")"
-		}
-
-		/// The formatted help text for this Option.Description used in the help menu
-		public var helpText: String {
-			if let p = parameterName {
-				return "\(flag.description)=\(p)"
-					.padding(toLength: 20, withPad: " ", startingAt: 0) + overview
-			}
-			return "\(flag.description)".padding(toLength: 30, withPad: " ", startingAt: 0) + overview
-
-		}
-
-		/// Option.Description Init
-		///
-		/// - Parameters:
-		///   - flag: The flag for this option
-		///   - overview: The overview of this option used in the help menu
-		///   - parameterName: The parameter name of this option.  If nil the option takes no parameter IE '-v'
-		public init(flag: Flag, overview: String, parameterName: String? = nil) {
-			self.flag = flag
-			self.overview = overview
-			self.parameterName = parameterName
-		}
-
-		/// Option.Descriptions are equal if they have the same flag
-		public static func ==(lhs: Description, rhs: Description) -> Bool {
-			return (lhs.flag == rhs.flag)
-		}
+/// A struct for describing a option that a command is allowed to take in
+public struct Option: FlagIndexable, CustomStringConvertible, Equatable {
+	
+	/// A static help description attached to each command
+	public static let help = Option(
+		flag: .both(short: "h", long: "help"),
+		overview: "The help menu",
+		parameterName: nil)
+	
+	/// The flag for this option
+	public var flag: Flag
+	
+	/// The overview of this option used in the help menu
+	public var overview: String
+	
+	/// The parameter name of this option.  If nil the option takes no parameter IE '-v'
+	public var parameterName: String? = nil
+	
+	/// True if this option requires a parameter
+	public var requiresParameter: Bool {
+		return parameterName != nil
 	}
-
-
-	/// A struct used to describe the evaualted version of a Option.Description
-	public struct evaluation: FlagIndexable, CustomStringConvertible {
-
-		/// The flag of this evaluation
-		public var flag: Flag
-
-		/// The parameter of this evaluation.  Nil if flag does not require parameter IE '-v'
-		public var parameter: String?
-
-		/// CustomStringConvertible
-		public var description: String {
-			if let p = parameter {
-				return "\(flag.description)=\(p)"
-			} else {
-				return "\(flag.description)"
-			}
+	
+	/// The description of this Option.Description for CustomStringConvertible
+	public var description: String {
+		return "(\(flag.description)) \(overview) \(parameterName ?? "")"
+	}
+	
+	/// The formatted help text for this Option.Description used in the help menu
+	public var helpText: String {
+		if let p = parameterName {
+			return "\(flag.description)=\(p)"
+				.padding(toLength: 20, withPad: " ", startingAt: 0) + overview
 		}
-
-		/// Option.evaluation Init parses a string read from arguments and attempts
-		/// to create a flag and option parameter.  IE '--filePath=/Path' will evaulate
-		/// to flag = .long("filePath") and parameter = "/Path"
-		///
-		/// - Parameter string: The string to parse
-		public init?(string: String) {
-			switch (string.characters.first?.asString, string.characters.second?.asString) {
-
-			// Parsed string is long flag
-			case (.some("-"), .some("-")):
-
-				let split = string.characters.dropFirst(2).asString.components(separatedBy: "=")
-
-				guard
-					let longName = split.first,
-					longName != "",
-					split.second != ""
-					else { return nil }
-
-				self.flag = .long(longName)
-				self.parameter = split.second
-
-			// Parsed string is short flag
-			case (.some("-"), _):
-
-				let split = string.characters.dropFirst().asString.components(separatedBy: "=")
-
-				guard
-					let shortName = split.first,
-					shortName != "",
-					split.second != ""
-					else { return nil }
-
-				self.flag = .short(shortName)
-				self.parameter = split.second
-			default:
-				return nil
-			}
-		}
+		return "\(flag.description)".padding(toLength: 30, withPad: " ", startingAt: 0) + overview
+		
+	}
+	
+	/// Option Init
+	///
+	/// - Parameters:
+	///   - flag: The flag for this option
+	///   - overview: The overview of this option used in the help menu
+	///   - parameterName: The parameter name of this option.  If nil the option takes no parameter IE '-v'
+	public init(flag: Flag, overview: String, parameterName: String? = nil) {
+		self.flag = flag
+		self.overview = overview
+		self.parameterName = parameterName
+	}
+	
+	/// Option.Descriptions are equal if they have the same flag
+	public static func ==(lhs: Option, rhs: Option) -> Bool {
+		return (lhs.flag == rhs.flag)
 	}
 }

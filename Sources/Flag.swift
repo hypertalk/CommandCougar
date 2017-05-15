@@ -74,8 +74,20 @@ public extension Option {
 		}
 
 		/// Equatability
-		public static func ==(lhs: Flag, rhs: Flag) -> Bool {
-			return (lhs.shortName == rhs.shortName) || (lhs.longName == rhs.longName)
+		public static func ==(lhs: Flag, rhs: Flag) -> Bool {			
+			if let ls = lhs.shortName, let rs = rhs.shortName,
+				let ll = lhs.longName, let rl = rhs.longName {
+				return (ls == rs) && (ll == rl)
+			}
+			
+			if let ls = lhs.shortName, let rs = rhs.shortName {
+				return ls == rs
+			}
+			
+			if let ll = lhs.longName, let rl = rhs.longName {
+				return ll == rl
+			}
+			return false
 		}
 
 		public static func ==(lhs: Flag, rhs: String) -> Bool {

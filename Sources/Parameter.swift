@@ -25,55 +25,49 @@
 
 import Foundation
 
-public struct Parameter {
-	public enum Description: Equatable {
-		case required(String)
-		case optional(String)
-
-		/// The associated value of this parameter
-		public var value: String {
-			switch self {
-			case .required (let s):
-				return s
-			case .optional (let s):
-				return s
-			}
-		}
-
-		/// The formatted text value of this parameter used in the help menu
-		public var formattedValue: String {
-			switch self {
-			case .required:
-				return "<\(value)>"
-			case .optional:
-				return "[<\(value)>]"
-			}
-		}
-
-		/// Is this parameter required
-		public var isRequired: Bool {
-			switch self {
-			case .required: return true
-			default: return false
-			}
-		}
-
-		/// Is this parameter optional
-		public var isOptional: Bool {
-			return !isRequired
-		}
-
-		public static func ==(lhs: Description, rhs: Description) -> Bool {
-			switch (lhs, rhs) {
-			case (.required(let a), .required(let b)), (.optional(let a), .optional(let b)):
-				return a == b
-			default:
-				return false
-			}
+public enum Parameter: Equatable {
+	case required(String)
+	case optional(String)
+	
+	/// The associated value of this parameter
+	public var value: String {
+		switch self {
+		case .required (let s):
+			return s
+		case .optional (let s):
+			return s
 		}
 	}
-
-
-	/// The evaulated version of a parameter is just a string
-	public typealias evaluation = String
+	
+	/// The formatted text value of this parameter used in the help menu
+	public var formattedValue: String {
+		switch self {
+		case .required:
+			return "<\(value)>"
+		case .optional:
+			return "[<\(value)>]"
+		}
+	}
+	
+	/// Is this parameter required
+	public var isRequired: Bool {
+		switch self {
+		case .required: return true
+		default: return false
+		}
+	}
+	
+	/// Is this parameter optional
+	public var isOptional: Bool {
+		return !isRequired
+	}
+	
+	public static func ==(lhs: Parameter, rhs: Parameter) -> Bool {
+		switch (lhs, rhs) {
+		case (.required(let a), .required(let b)), (.optional(let a), .optional(let b)):
+			return a == b
+		default:
+			return false
+		}
+	}
 }
