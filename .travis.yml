@@ -5,3 +5,5 @@ env: JOB=SPM
 os: osx
 osx_image: xcode8.3
 language: objective-c
+after_success:
+  - bash <(curl -s https://codecov.io/bash)

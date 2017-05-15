@@ -6,7 +6,7 @@ An elegant pure Swift library for building command line applications.
 
 ## Features
 
-- [x] Light weight, simple, composed with [pure value types.](https://developer.apple.com/videos/play/wwdc2015/414/)
+- [x] Tons of class, but no classes.  100% organic [pure value types.](https://developer.apple.com/videos/play/wwdc2015/414/)
 - [x] Auto generated help menus for main command and sub-commands.
 - [x] Help menu format is based on [swift package manager](https://github.com/apple/swift-package-manager)
 - [x] Supports multi command callbacks.
@@ -25,7 +25,98 @@ An elegant pure Swift library for building command line applications.
   CommandCougar supports a main command as well as subcommands.  This is much like
   the swift package manager interface.  
 
-#### Consider this command
+### `Command`
+A command is a `struct` that is used to outline the structure of your command line interface. It can have either a list of subcommands or a list of (`.required` | `.optional`) parameters.
+
+
+#### Creating a `Command`
+
+``` swift
+var helloCommand = Command(
+    name: "hello",
+    overview: "Say Hello",
+    callback: { print($0.options, $0.parameters) },
+    options: [
+        Option(flag: .short("v"), overview: "Increase verbosity"),
+        Option(flag: .short("w"), overview: "Wave hello")
+    ],
+    parameters:[.optional("Name")])
+```
+
+#### Evaluating a `Command`
+
+Once a command has been created, it can be evaluated against a list of
+arguments, usually taken from CommandLine.arguments.  The evaluate function
+creates and returns a `CommandEvaluation`.
+
+``` swift
+let arguments = ["hello", "-v", "Mr.Rogers"]
+let helloEvaluation = helloCommand.evaluate(arguments: arguments)
+```
+
+#### Reading a `CommandEvaluation`
+
+A `CommandEvaluation` is a `struct` for representing the results of evaluating a `Command` against a list of arguments.  
+
+``` swift
+helloCommand.options        // ['-v', '-w']
+helloEvaluation.options     // ['-v']
+helloEvaluation.parameters  // ['Mr.Rogers']
+```
+Notice the evaluation only includes the options which were seen in the arguments list.
+
+#### Performing callbacks
+
+Callbacks pass the `CommandEvaluation` as an input to the function
+that was set in the `Command` before evaluation.
+
+``` swift
+try helloEvaluation.performCallbacks()
+```
+---
+
+#### Help menu automatically generated
+
+The help menu is auto generated and the option is added
+to the command option set.
+
+``` shell
+$ hello --help
+OVERVIEW: Say Hello
+
+USAGE: hello [option] <command>
+
+COMMANDS:
+
+OPTIONS:
+   -h, --help                    The help menu
+   -v                            Increase verbosity
+   -w                            Wave hello
+```
+
+### `Options`
+Options can have either a short flag ie `-v` or a long flag ie `--verbose`.
+Options are allowed to have a single optional parameter.  The flag and parameter must be joined with an `=` ie `--path=/tmp`.
+
+``` swift
+// will match -v
+Option(flag: .short("v"), overview: "verbose")
+
+// will match -v | --verbose
+Option(flag: .both(short: "v", long: "verbose"), overview: "verbose")
+
+// will match --path=/etc
+Option(flag: .long("path"), overview: "File path", parameterName: "/etc")
+```
+
+
+
+---
+### `Subcommands`
+
+Many command line interfaces like [git](https://github.com/git/git) or the [swift package manager](https://github.com/apple/swift-package-manager) allow for subcommands.  CommandCougar also allows this to be expressed.  A rule to notice is that a command that has subcommands is not allowed to also have parameters.
+
+##### Consider this command:
 
 ``` shell
 swift package -v update --repin
@@ -38,11 +129,10 @@ swift package -v update --repin
 `update` is a subcommand of the `package` command with `--repin` as an option.
 
 
-### Simple Example
-This example parses `swift package -v update --repin` and performs
-an `echo` callback each command
+A command to express this list of arguments would be as follows:
 
 ``` swift
+/// Used for callback
 func echo(evaluation: Command.Evaluation) throws {
   print(
     "\(evaluation.name) evaluated with " +
@@ -52,41 +142,44 @@ func echo(evaluation: Command.Evaluation) throws {
 }
 
 let swiftCommand =
-Command.Description(
+Command(
     name: "swift",
     overview: "Swift Program",
     callback: echo,
     options: [],
     subCommands: [
-        Command.Description(
+        Command(
             name: "package",
             overview: "Perform operations on Swift packages",
             callback: echo,
             options: [
-                Option.Description(
+                Option(
                     flag: .both(short: "v", long: "verbose"),
                     overview: "Increase verbosity of informational output"),
-                Option.Description(
+                Option(
                     flag: .long("enable-prefetching"),
                     overview: "Increase verbosity of informational output")
             ],
             subCommands: [
-                Command.Description(
+                Command(
                     name: "update",
                     overview: "Update package dependencies",
                     callback: echo,
                     options: [
-                        Option.Description(
+                        Option(
                             flag: .long("repin"),
                             overview: "Update without applying pins and repin the updated versions.")
                     ],
                     subCommands: [])
             ])
     ])
+```
+### Evaluating `Subcommands`
+When evaluating the root command all subcommands will also be evaluated and their callbacks will be fired.
 
-
+``` swift
 do {
-  // args normally is CommandLine.arguments
+    // normally CommandLine.arguments
     let args = ["swift", "package", "-v", "update", "--repin"]
     let evaluation: Command.Evaluation = try swiftCommand.evaluate(arguments: args)
     try evaluation.performCallbacks()
@@ -98,10 +191,11 @@ do {
 // swift evaluated with  options: []  and parameters []
 // package evaluated with  options: [-v]  and parameters []
 // update evaluated with  options: [--repin]  and parameters []
+
 ```
 
-### Accessing the values of the `Command.Evaluation`
-To directly access the values of the returned `Command.Evaluation`
+### Accessing the values of the `CommandEvaluation`
+To directly access the values of the returned `CommandEvaluation`
 ``` swift
 evaluation["package"]?.name  // results in "package"
 
@@ -114,23 +208,7 @@ evaluation["package"]?.options["enable-prefetching"] // results in nil
 evaluation["package update"]?.options["repin"]?.flag.longName // results in "repin"
 ```
 
-### Help menu automatically generated
-
-The help menu for each subcommand is auto generated and the option is added
-to the command.
-
-``` shell
-$ swift --help
-OVERVIEW: Swift Program
-
-USAGE: swift [option] <command>
-
-COMMANDS:
-   package                       Perform operations on Swift packages
-
-OPTIONS:
-   -h, --help                    The help menu
-```
+### Help menu different for subcommands
 
 Help is also generated for subcommands
 
@@ -148,71 +226,33 @@ OPTIONS:
    --enable-prefetching          Enable prefetching in resolver
    -h, --help                    The help menu
 ```
+---
 
+### [EBNF](https://en.wikipedia.org/wiki/Extended_Backus%E2%80%93Naur_form)
 
-### Creating a Command.Description
-
-The `Command.Description` struct is used to represent how this command should be
-parsed.
-
-Here is a `Command.Description` that will evaluate the above command.
-``` swift
-let swiftCommand =
-Command.Description(
-    name: "swift",
-    overview: "Swift Program",
-    callback: swiftCallback,
-    options: [],
-    subCommands: [
-      Command.Description(
-        name: "package",
-        overview: "Perform operations on Swift packages",
-        callback: packageCallback,
-        options: [
-          Option.Description(
-            flag: .both(short: "v", long: "verbose"),
-            overview: "Increase verbosity of informational output"),
-            Option.Description(
-              flag: .both(long: "enable-prefetching"),
-              overview: "Increase verbosity of informational output")
-        ],
-        subCommands: [
-          Command.Description(
-            name: "update",
-            overview: "Update package dependencies",
-            callback: updateCallback,
-            options: [
-              Option.Description(
-                flag: .long("repin"),
-                overview: "Update without applying pins and repin the updated versions.")
-            ],
-            subCommands: [])
-        ])
-    ])
-
+A EBNF of the language supported by CommandCougar is as follows
+```
+<command> ::= <word> {<option>} ([<command>] | {<parameter>})
+<option> ::= <single> | <double>
+<single> ::= -<letter>=[<parameter>]
+<double> ::= --<word>=[<parameter>]
+<parameter> ::= <word>
+<word> ::= <letter>+
+<letter> ::= a | b | c | d | e...
 ```
 
-### Evaluating the `Command.Description` to create a `Command.Evaluation`
+### [CLOC](https://github.com/AlDanial/cloc)
 
-``` swift
-let args = CommandLine.arguments
-let evaluation: Command.Evaluation = try swiftCommand.evaluate(arguments: args)
+A line count breakdown to show overall size of the project
 ```
-
-### Performing callbacks on a `Command.Evaluation`
-
-```swift
-try evaluation.performCallbacks()
+-------------------------------------------------------------------------------
+Language                     files          blank        comment           code
+-------------------------------------------------------------------------------
+Swift                            8            115            310            359
+-------------------------------------------------------------------------------
+SUM:                             8            115            310            359
+-------------------------------------------------------------------------------
 ```
-This will perform three callbacks:
-
-`swiftCallback`: No options and no commands passed
-
-`packageCallback`: `-v` as an option
-
-`updateCallback`: `--repin` as an option
-
-
 ## Communication
 
 - If you **found a bug**, open an issue.
