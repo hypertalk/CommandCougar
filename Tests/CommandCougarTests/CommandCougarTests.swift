@@ -43,13 +43,6 @@ class CommandCougarTests: XCTestCase {
 
 	}
 
-	func testIndexing() {
-		let swift = Command.swift
-		XCTAssert(swift["package"]?.options["v"] != nil)
-		XCTAssert(swift["package update"]?.options["repin"] != nil)
-		XCTAssert(swift["package edit"]?.maxParameterCount == 1)
-	}
-
 	func echo(evaluation: Command.Evaluation) throws {
 		print(
 			"\(evaluation.name) evaluated with " +
@@ -57,27 +50,18 @@ class CommandCougarTests: XCTestCase {
 			" and parameters \(evaluation.parameters)"
 		)
 	}
-
-	func testMarkdownExample() {
-		func echo(evaluation: Command.Evaluation) throws {
-			print(
-				"\(evaluation.name) evaluated with " +
-				"options: \(evaluation.options) " +
-				"and parameters \(evaluation.parameters)"
-			)
-		}
-
-		let swiftCommand =
+	
+	let swiftCommand =
 		Command.Description(
 			name: "swift",
 			overview: "Swift Program",
-			callback: echo,
+			callback: nil,
 			options: [],
 			subCommands: [
 				Command.Description(
 					name: "package",
 					overview: "Perform operations on Swift packages",
-					callback: echo,
+					callback: nil,
 					options: [
 						Option.Description(
 							flag: .both(short: "v", long: "verbose"),
@@ -90,7 +74,7 @@ class CommandCougarTests: XCTestCase {
 						Command.Description(
 							name: "update",
 							overview: "Update package dependencies",
-							callback: echo,
+							callback: nil,
 							options: [
 								Option.Description(
 									flag: .long("repin"),
@@ -99,6 +83,17 @@ class CommandCougarTests: XCTestCase {
 							subCommands: [])
 					])
 			])
+	
+	func testIndexing() {
+		let swift = swiftCommand
+		XCTAssert(swift["package"]?.options["v"] != nil)
+		XCTAssert(swift["package update"]?.options["repin"] != nil)
+		//XCTAssert(swift["package edit"]?.maxParameterCount == 1)
+	}
+
+
+
+	func testMarkdownExample() {
 
 		// args normally is CommandLine.arguments
 		do {
