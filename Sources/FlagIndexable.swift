@@ -26,11 +26,13 @@
 import Foundation
 
 
-/// A somthing flagIndexeable if it contains a flag value.
-/// Used by Option.Description and Option.Evaluation
+/// Something is flagIndexeable if it contains a flag value.
+/// Used by Option and OptionEvaluation
 public protocol FlagIndexable {
 	var flag: Option.Flag { get }
 }
+
+
 
 public extension Array where Element: FlagIndexable {
 
@@ -38,8 +40,48 @@ public extension Array where Element: FlagIndexable {
 	///
 	/// - Parameter flagName: The flagName
 	public subscript (flagName: String) -> Element? {
-		return first(where: { $0.flag == flagName })
+		get {
+			return first(where: { $0.flag == flagName })
+		} set {
+			self = self.flatMap {
+				if $0.flag == flagName {
+					return newValue
+				} else {
+					return $0
+				}
+			}
+
+		}
 	}
+	
+	/// Allows for subscripting of this array by flag
+	///
+	/// - Parameter flag: The flag
+	public subscript (flag: Option.Flag) -> Element? {
+		get {
+			return first(where: { $0.flag == flag })
+		} set {
+			self = self.flatMap {
+				if $0.flag == flag {
+					return newValue
+				} else {
+					return $0
+				}
+			}
+		}
+		
+	}
+	
+	/// Allows for subscripting of this array by flag
+	///
+	/// - Parameter flag: The flag
+	public subscript (option: FlagIndexable) -> Element? {
+		get {
+			return first(where: { $0.flag == option.flag })
+		}
+		
+	}
+
 
 	/// Check if this array contains a Element equal to the given FlagIndexable
 	///
@@ -50,13 +92,4 @@ public extension Array where Element: FlagIndexable {
 	}
 }
 
-///
-public protocol CommandIndexable {
-	var name: String { get }
-}
 
-public extension Array where Element: CommandIndexable {
-	public subscript(commandName: String) -> Element? {
-		return first(where: { $0.name == commandName })
-	}
-}

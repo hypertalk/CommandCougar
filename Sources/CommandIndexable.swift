@@ -1,5 +1,5 @@
 //
-//  CommandCougar.swift
+//  CommandIndexable.swift
 //  CommandCougar
 //
 //  Copyright (c) 2017 Surf & Neptune LLC (http://surfandneptune.com/)
@@ -25,12 +25,22 @@
 
 import Foundation
 
-public struct CommandCougar {
-	public enum Errors: Error {
-		case validate(String)
-		case callback(String)
-		case parse(String)
-		case invalidParameterCount(String)
-		case invalidFlag(String)
+/// Something is CommandIndexable if it has a name
+public protocol CommandIndexable {
+	var name: String { get }
+}
+
+public extension Array where Element: CommandIndexable {
+	public subscript(commandName: String) -> Element? {
+		get {
+			return first(where: { $0.name == commandName })
+		} set {
+			self = self.flatMap { c in
+				if c.name == commandName {
+					return newValue
+				}
+				return c
+			}
+		}
 	}
 }

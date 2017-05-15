@@ -1,5 +1,5 @@
 //
-//  CommandCougar.swift
+//  ParameterEvaluation.swift
 //  CommandCougar
 //
 //  Copyright (c) 2017 Surf & Neptune LLC (http://surfandneptune.com/)
@@ -25,12 +25,5 @@
 
 import Foundation
 
-public struct CommandCougar {
-	public enum Errors: Error {
-		case validate(String)
-		case callback(String)
-		case parse(String)
-		case invalidParameterCount(String)
-		case invalidFlag(String)
-	}
-}
+/// The evaulated version of a parameter is just a string
+public typealias ParameterEvaluation = String
