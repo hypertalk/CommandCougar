@@ -107,7 +107,6 @@ class CommandCougarTests: XCTestCase {
 		XCTAssert(newCommand["package"]?["update"]?.options.count == 0 )
 		XCTAssert(newCommand["package"]?["edit"]?.options["branch"]?.parameterName == "newName")
 
-		
 	}
 	
 	func testCommandValidate() {
@@ -279,11 +278,41 @@ class CommandCougarTests: XCTestCase {
 			.evaluate(arguments: ["swift", "package", "-v", "edit", "--revision=HEAD"]) }
 		catch { XCTAssert(true) }
 		
+	}
+	
+	func testCallbacks() {
+		
+		do {
+			var newCommand = swiftCommand
+			var swiftBool = false, packageBool = false, updateBool = false
+			
+			newCommand.callback = { evaluation in
+				swiftBool = true
+			}
+			
+			newCommand["package"]?.callback = { evaluation in
+				packageBool = true
+			}
+			
+			newCommand["package"]?["update"]?.callback = { evaluation in
+				updateBool = true
+			}
+			
+			try newCommand
+				.evaluate(arguments: ["swift", "package", "-v", "update", "--repin"])
+				.performCallbacks()
+			
+			XCTAssert(swiftBool && packageBool && updateBool)
+
+		} catch {
+			XCTAssert(false, "Erorr \(error)")
+		}
 		
 	}
 	
     static var allTests : [(String, (CommandCougarTests) -> () throws -> Void)] {
         return [
+			("testCallbacks", testCallbacks),
 			("testFlagEquatability", testFlagEquatability),
 			("testCommandNavigation", testCommandNavigation),
 			("testCommandValidate", testCommandValidate),
