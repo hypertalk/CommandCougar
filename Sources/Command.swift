@@ -197,7 +197,6 @@ public struct Command: CommandIndexable {
 			else {
 				evaluation.parameters.append(next)
 			}
-			
 		}
 		
 		try evaluation.validate()

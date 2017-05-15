@@ -69,7 +69,6 @@ public extension Array where Element: FlagIndexable {
 				}
 			}
 		}
-		
 	}
 	
 	/// Allows for subscripting of this array by flag
@@ -81,7 +80,6 @@ public extension Array where Element: FlagIndexable {
 		}
 		
 	}
-
 
 	/// Check if this array contains a Element equal to the given FlagIndexable
 	///

@@ -208,6 +208,25 @@ evaluation["package"]?.options["enable-prefetching"] // results in nil
 evaluation["package"]?["update"]?.options["repin"]?.flag.longName // results in "repin"
 ```
 
+To access parameters by index you may use `retrieveParamter(Int) throws -> String`. If the parameter does
+not exist a `parameterAccessError` will be thrown.  
+
+This will turn:
+``` swift
+func callback(evaluation: CommandEvaluation) throws {
+    guard let first = evaluation.parameters.first else {
+    throw CommandCougar.Errors.parameterAccessError("Parameter not found.")
+	}
+}
+```
+
+Into: 
+``` swift
+func callback(evaluation: CommandEvaluation) throws {
+    let first = try evaluation.retriveParamter(at: 0)
+}
+```
+
 ### Help menu different for subcommands
 
 Help is also generated for subcommands

@@ -49,4 +49,12 @@ internal extension Collection {
 		let _ = a.next()
 		return a.next()
 	}
+	
+	/// The third element in the Collection
+	internal var third: Self.Iterator.Element? {
+		var a = self.makeIterator()
+		let _ = a.next()
+		let _ = a.next()
+		return a.next()
+	}
 }

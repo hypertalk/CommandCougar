@@ -30,6 +30,7 @@ public struct CommandCougar {
 		case validate(String)
 		case callback(String)
 		case parse(String)
+		case parameterAccessError(String)
 		case invalidParameterCount(String)
 		case invalidFlag(String)
 	}
