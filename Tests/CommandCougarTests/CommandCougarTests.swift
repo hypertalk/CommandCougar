@@ -228,6 +228,53 @@ class CommandCougarTests: XCTestCase {
 			catch { XCTAssert(true) }
 		}
 	}
+	
+	
+	/// Test if callbacks do not fire when a help option is present
+	func testHelpCallback() {
+		func callback(evaluation: CommandEvaluation) throws {
+			throw CommandCougar.Errors.callback("Test Error")
+		}
+		
+		let cmd =
+			Command(
+				name: "cmd",
+				overview: "A command",
+				callback: callback,
+				options: [
+
+				],
+				parameters: [])
+		
+		let cmd2 =
+			Command(
+				name: "cmd",
+				overview: "A command",
+				callback: callback,
+				options: [
+					
+				],
+				subCommands: [
+					Command(
+						name: "cmd2",
+						overview: "A command2",
+						callback: callback,
+						options: [
+							
+						],
+						parameters: [])
+				])
+		do {
+			let evaluation = try cmd.evaluate(arguments: ["cmd", "--help"])
+			XCTAssertNoThrow(try evaluation.performCallbacks())
+			print(cmd2.subCommands)
+			let evaluation2 = try cmd2.evaluate(arguments: ["cmd", "cmd2", "--help"])
+			XCTAssertNoThrow(try evaluation2.performCallbacks())
+			
+		} catch {
+			XCTAssert(false, "Evaluation failed")
+		}
+	}
 
 	func testEvaluation() {
 		

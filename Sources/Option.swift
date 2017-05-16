@@ -49,6 +49,9 @@ public struct Option: FlagIndexable, CustomStringConvertible, Equatable {
 		return parameterName != nil
 	}
 	
+	/// How much padding the help menu uses
+	public var helpPadding: Int = 30
+	
 	/// The description of this Option.Description for CustomStringConvertible
 	public var description: String {
 		return "(\(flag.description)) \(overview) \(parameterName ?? "")"
@@ -58,9 +61,16 @@ public struct Option: FlagIndexable, CustomStringConvertible, Equatable {
 	public var helpText: String {
 		if let p = parameterName {
 			return "\(flag.description)=\(p)"
-				.padding(toLength: 20, withPad: " ", startingAt: 0) + overview
+				.padding(
+					toLength: helpPadding,
+					withPad: " ",
+					startingAt: 0) + overview
 		}
-		return "\(flag.description)".padding(toLength: 30, withPad: " ", startingAt: 0) + overview
+		return "\(flag.description)"
+			.padding(
+				toLength: helpPadding,
+				withPad: " ",
+				startingAt: 0) + overview
 		
 	}
 	

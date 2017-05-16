@@ -60,6 +60,11 @@ public struct CommandEvaluation: CommandIndexable {
 		return describer.name
 	}
 	
+	/// A list of every option for this evaulation and all sub evaluations
+	public var allOptions: [OptionEvaluation] {
+		return options + (subEvaluation?.allOptions ?? [])
+	}
+	
 	/// Command evaluation Init
 	///
 	/// - Parameter describer: The Command.Description used to create this evaluation
@@ -71,6 +76,12 @@ public struct CommandEvaluation: CommandIndexable {
 	///
 	/// - Throws: The callabacks error
 	public func performCallbacks() throws {
+
+		// Do not perform callbacks if help is in any option
+		if allOptions.contains(where: { $0.flag == "help" }) {
+			return
+		}
+		
 		try describer.callback?(self)
 		try subEvaluation?.performCallbacks()
 	}
