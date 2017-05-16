@@ -168,7 +168,7 @@ public struct Command: CommandIndexable {
 	/// - Throws: Error if arguments is malformed or this command does not support option / parameter
 	private func subEvaluate(arguments: [String]) throws -> CommandEvaluation {
 		
-		guard arguments.count > 0 else { throw CommandCougar.Errors.parse("No arguments given.") }
+		//guard arguments.count > 0 else { throw CommandCougar.Errors.parse("No arguments given.") }
 		
 		try validate()
 		
