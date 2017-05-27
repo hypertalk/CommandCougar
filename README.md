@@ -54,6 +54,12 @@ let arguments = ["hello", "-v", "Mr.Rogers"]
 let helloEvaluation = helloCommand.evaluate(arguments: arguments)
 ```
 
+Typically, the input of the arguments will be supplied by CommandLine.arguments.  Please note that CommandCougar automatically drops the first argument.
+
+``` swift
+let helloEvaluation = helloCommand.evaluate(arguments: CommandLine.arguments)
+```
+
 #### Reading a `CommandEvaluation`
 
 A `CommandEvaluation` is a `struct` for representing the results of evaluating a `Command` against a list of arguments.  
