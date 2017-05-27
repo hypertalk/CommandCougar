@@ -7,90 +7,90 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		AB384B361EC9F1720068D59C /* CommandIndexable.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB384B351EC9F1720068D59C /* CommandIndexable.swift */; };
-		AB384B381EC9F1F60068D59C /* OptionEvaluation.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB384B371EC9F1F60068D59C /* OptionEvaluation.swift */; };
-		AB384B3A1EC9F2AF0068D59C /* ParameterEvaluation.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB384B391EC9F2AF0068D59C /* ParameterEvaluation.swift */; };
-		OBJ_27 /* Command.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_8 /* Command.swift */; };
-		OBJ_28 /* CommandEvaluation.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_9 /* CommandEvaluation.swift */; };
-		OBJ_29 /* CommandCougar.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_10 /* CommandCougar.swift */; };
-		OBJ_30 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_11 /* Extensions.swift */; };
-		OBJ_31 /* Flag.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_12 /* Flag.swift */; };
-		OBJ_32 /* FlagIndexable.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_13 /* FlagIndexable.swift */; };
-		OBJ_33 /* Option.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_14 /* Option.swift */; };
-		OBJ_34 /* Parameter.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_15 /* Parameter.swift */; };
-		OBJ_41 /* CommandCougarTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_18 /* CommandCougarTests.swift */; };
-		OBJ_43 /* CommandCougar.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = OBJ_20 /* CommandCougar.framework */; };
+		OBJ_30 /* Command.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_8 /* Command.swift */; };
+		OBJ_31 /* CommandCougar.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_9 /* CommandCougar.swift */; };
+		OBJ_32 /* CommandEvaluation.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_10 /* CommandEvaluation.swift */; };
+		OBJ_33 /* CommandIndexable.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_11 /* CommandIndexable.swift */; };
+		OBJ_34 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_12 /* Extensions.swift */; };
+		OBJ_35 /* Flag.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_13 /* Flag.swift */; };
+		OBJ_36 /* FlagIndexable.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_14 /* FlagIndexable.swift */; };
+		OBJ_37 /* Option.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_15 /* Option.swift */; };
+		OBJ_38 /* OptionEvaluation.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_16 /* OptionEvaluation.swift */; };
+		OBJ_39 /* Parameter.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_17 /* Parameter.swift */; };
+		OBJ_40 /* ParameterEvaluation.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_18 /* ParameterEvaluation.swift */; };
+		OBJ_47 /* CommandCougarTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_21 /* CommandCougarTests.swift */; };
+		OBJ_49 /* CommandCougar.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = OBJ_23 /* CommandCougar.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		AB384B341EC9E4040068D59C /* PBXContainerItemProxy */ = {
+		55A28ED51ED9AD7900178F59 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = OBJ_1 /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = OBJ_22;
+			remoteGlobalIDString = OBJ_25;
 			remoteInfo = CommandCougar;
 		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		AB384B351EC9F1720068D59C /* CommandIndexable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommandIndexable.swift; sourceTree = "<group>"; };
-		AB384B371EC9F1F60068D59C /* OptionEvaluation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OptionEvaluation.swift; sourceTree = "<group>"; };
-		AB384B391EC9F2AF0068D59C /* ParameterEvaluation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ParameterEvaluation.swift; sourceTree = "<group>"; };
-		OBJ_10 /* CommandCougar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommandCougar.swift; sourceTree = "<group>"; };
-		OBJ_11 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
-		OBJ_12 /* Flag.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Flag.swift; sourceTree = "<group>"; };
-		OBJ_13 /* FlagIndexable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlagIndexable.swift; sourceTree = "<group>"; };
-		OBJ_14 /* Option.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Option.swift; sourceTree = "<group>"; };
-		OBJ_15 /* Parameter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Parameter.swift; sourceTree = "<group>"; };
-		OBJ_18 /* CommandCougarTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommandCougarTests.swift; sourceTree = "<group>"; };
-		OBJ_20 /* CommandCougar.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = CommandCougar.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		OBJ_21 /* CommandCougarTests.xctest */ = {isa = PBXFileReference; lastKnownFileType = file; path = CommandCougarTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		OBJ_10 /* CommandEvaluation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommandEvaluation.swift; sourceTree = "<group>"; };
+		OBJ_11 /* CommandIndexable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommandIndexable.swift; sourceTree = "<group>"; };
+		OBJ_12 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		OBJ_13 /* Flag.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Flag.swift; sourceTree = "<group>"; };
+		OBJ_14 /* FlagIndexable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlagIndexable.swift; sourceTree = "<group>"; };
+		OBJ_15 /* Option.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Option.swift; sourceTree = "<group>"; };
+		OBJ_16 /* OptionEvaluation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OptionEvaluation.swift; sourceTree = "<group>"; };
+		OBJ_17 /* Parameter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Parameter.swift; sourceTree = "<group>"; };
+		OBJ_18 /* ParameterEvaluation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParameterEvaluation.swift; sourceTree = "<group>"; };
+		OBJ_21 /* CommandCougarTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommandCougarTests.swift; sourceTree = "<group>"; };
+		OBJ_23 /* CommandCougar.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = CommandCougar.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		OBJ_24 /* CommandCougarTests.xctest */ = {isa = PBXFileReference; lastKnownFileType = file; path = CommandCougarTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		OBJ_6 /* Package.swift */ = {isa = PBXFileReference; explicitFileType = sourcecode.swift; path = Package.swift; sourceTree = "<group>"; };
 		OBJ_8 /* Command.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Command.swift; sourceTree = "<group>"; };
-		OBJ_9 /* CommandEvaluation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommandEvaluation.swift; sourceTree = "<group>"; };
+		OBJ_9 /* CommandCougar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommandCougar.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		OBJ_35 /* Frameworks */ = {
+		OBJ_41 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 0;
 			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		OBJ_42 /* Frameworks */ = {
+		OBJ_48 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 0;
 			files = (
-				OBJ_43 /* CommandCougar.framework in Frameworks */,
+				OBJ_49 /* CommandCougar.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		OBJ_16 /* Tests */ = {
+		OBJ_19 /* Tests */ = {
 			isa = PBXGroup;
 			children = (
-				OBJ_17 /* CommandCougarTests */,
+				OBJ_20 /* CommandCougarTests */,
 			);
 			name = Tests;
 			sourceTree = SOURCE_ROOT;
 		};
-		OBJ_17 /* CommandCougarTests */ = {
+		OBJ_20 /* CommandCougarTests */ = {
 			isa = PBXGroup;
 			children = (
-				OBJ_18 /* CommandCougarTests.swift */,
+				OBJ_21 /* CommandCougarTests.swift */,
 			);
 			name = CommandCougarTests;
 			path = Tests/CommandCougarTests;
 			sourceTree = SOURCE_ROOT;
 		};
-		OBJ_19 /* Products */ = {
+		OBJ_22 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				OBJ_20 /* CommandCougar.framework */,
-				OBJ_21 /* CommandCougarTests.xctest */,
+				OBJ_23 /* CommandCougar.framework */,
+				OBJ_24 /* CommandCougarTests.xctest */,
 			);
 			name = Products;
 			sourceTree = BUILT_PRODUCTS_DIR;
@@ -100,8 +100,8 @@
 			children = (
 				OBJ_6 /* Package.swift */,
 				OBJ_7 /* Sources */,
-				OBJ_16 /* Tests */,
-				OBJ_19 /* Products */,
+				OBJ_19 /* Tests */,
+				OBJ_22 /* Products */,
 			);
 			name = "";
 			sourceTree = "<group>";
@@ -110,16 +110,16 @@
 			isa = PBXGroup;
 			children = (
 				OBJ_8 /* Command.swift */,
-				OBJ_9 /* CommandEvaluation.swift */,
-				OBJ_10 /* CommandCougar.swift */,
-				OBJ_11 /* Extensions.swift */,
-				OBJ_12 /* Flag.swift */,
-				OBJ_13 /* FlagIndexable.swift */,
-				AB384B351EC9F1720068D59C /* CommandIndexable.swift */,
-				OBJ_14 /* Option.swift */,
-				AB384B371EC9F1F60068D59C /* OptionEvaluation.swift */,
-				OBJ_15 /* Parameter.swift */,
-				AB384B391EC9F2AF0068D59C /* ParameterEvaluation.swift */,
+				OBJ_9 /* CommandCougar.swift */,
+				OBJ_10 /* CommandEvaluation.swift */,
+				OBJ_11 /* CommandIndexable.swift */,
+				OBJ_12 /* Extensions.swift */,
+				OBJ_13 /* Flag.swift */,
+				OBJ_14 /* FlagIndexable.swift */,
+				OBJ_15 /* Option.swift */,
+				OBJ_16 /* OptionEvaluation.swift */,
+				OBJ_17 /* Parameter.swift */,
+				OBJ_18 /* ParameterEvaluation.swift */,
 			);
 			path = Sources;
 			sourceTree = SOURCE_ROOT;
@@ -127,12 +127,12 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		OBJ_22 /* CommandCougar */ = {
+		OBJ_25 /* CommandCougar */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = OBJ_23 /* Build configuration list for PBXNativeTarget "CommandCougar" */;
+			buildConfigurationList = OBJ_26 /* Build configuration list for PBXNativeTarget "CommandCougar" */;
 			buildPhases = (
-				OBJ_26 /* Sources */,
-				OBJ_35 /* Frameworks */,
+				OBJ_29 /* Sources */,
+				OBJ_41 /* Frameworks */,
 			);
 			buildRules = (
 			);
@@ -140,24 +140,24 @@
 			);
 			name = CommandCougar;
 			productName = CommandCougar;
-			productReference = OBJ_20 /* CommandCougar.framework */;
+			productReference = OBJ_23 /* CommandCougar.framework */;
 			productType = "com.apple.product-type.framework";
 		};
-		OBJ_36 /* CommandCougarTests */ = {
+		OBJ_42 /* CommandCougarTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = OBJ_37 /* Build configuration list for PBXNativeTarget "CommandCougarTests" */;
+			buildConfigurationList = OBJ_43 /* Build configuration list for PBXNativeTarget "CommandCougarTests" */;
 			buildPhases = (
-				OBJ_40 /* Sources */,
-				OBJ_42 /* Frameworks */,
+				OBJ_46 /* Sources */,
+				OBJ_48 /* Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				OBJ_44 /* PBXTargetDependency */,
+				OBJ_50 /* PBXTargetDependency */,
 			);
 			name = CommandCougarTests;
 			productName = CommandCougarTests;
-			productReference = OBJ_21 /* CommandCougarTests.xctest */;
+			productReference = OBJ_24 /* CommandCougarTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
@@ -176,55 +176,55 @@
 				en,
 			);
 			mainGroup = OBJ_5 /*  */;
-			productRefGroup = OBJ_19 /* Products */;
+			productRefGroup = OBJ_22 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				OBJ_22 /* CommandCougar */,
-				OBJ_36 /* CommandCougarTests */,
+				OBJ_25 /* CommandCougar */,
+				OBJ_42 /* CommandCougarTests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXSourcesBuildPhase section */
-		OBJ_26 /* Sources */ = {
+		OBJ_29 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 0;
 			files = (
-				AB384B361EC9F1720068D59C /* CommandIndexable.swift in Sources */,
-				OBJ_27 /* Command.swift in Sources */,
-				OBJ_28 /* CommandEvaluation.swift in Sources */,
-				OBJ_29 /* CommandCougar.swift in Sources */,
-				AB384B381EC9F1F60068D59C /* OptionEvaluation.swift in Sources */,
-				OBJ_30 /* Extensions.swift in Sources */,
-				OBJ_31 /* Flag.swift in Sources */,
-				OBJ_32 /* FlagIndexable.swift in Sources */,
-				OBJ_33 /* Option.swift in Sources */,
-				AB384B3A1EC9F2AF0068D59C /* ParameterEvaluation.swift in Sources */,
-				OBJ_34 /* Parameter.swift in Sources */,
+				OBJ_30 /* Command.swift in Sources */,
+				OBJ_31 /* CommandCougar.swift in Sources */,
+				OBJ_32 /* CommandEvaluation.swift in Sources */,
+				OBJ_33 /* CommandIndexable.swift in Sources */,
+				OBJ_34 /* Extensions.swift in Sources */,
+				OBJ_35 /* Flag.swift in Sources */,
+				OBJ_36 /* FlagIndexable.swift in Sources */,
+				OBJ_37 /* Option.swift in Sources */,
+				OBJ_38 /* OptionEvaluation.swift in Sources */,
+				OBJ_39 /* Parameter.swift in Sources */,
+				OBJ_40 /* ParameterEvaluation.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		OBJ_40 /* Sources */ = {
+		OBJ_46 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 0;
 			files = (
-				OBJ_41 /* CommandCougarTests.swift in Sources */,
+				OBJ_47 /* CommandCougarTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		OBJ_44 /* PBXTargetDependency */ = {
+		OBJ_50 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = OBJ_22 /* CommandCougar */;
-			targetProxy = AB384B341EC9E4040068D59C /* PBXContainerItemProxy */;
+			target = OBJ_25 /* CommandCougar */;
+			targetProxy = 55A28ED51ED9AD7900178F59 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
-		OBJ_24 /* Debug */ = {
+		OBJ_27 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ENABLE_TESTABILITY = YES;
@@ -245,7 +245,7 @@
 			};
 			name = Debug;
 		};
-		OBJ_25 /* Release */ = {
+		OBJ_28 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ENABLE_TESTABILITY = YES;
@@ -289,40 +289,6 @@
 			};
 			name = Debug;
 		};
-		OBJ_38 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PLATFORM_DIR)/Developer/Library/Frameworks",
-				);
-				HEADER_SEARCH_PATHS = "$(inherited)";
-				INFOPLIST_FILE = CommandCougar.xcodeproj/CommandCougarTests_Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "@loader_path/../Frameworks @loader_path/Frameworks";
-				OTHER_LDFLAGS = "$(inherited)";
-				OTHER_SWIFT_FLAGS = "$(inherited)";
-				TARGET_NAME = CommandCougarTests;
-			};
-			name = Debug;
-		};
-		OBJ_39 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PLATFORM_DIR)/Developer/Library/Frameworks",
-				);
-				HEADER_SEARCH_PATHS = "$(inherited)";
-				INFOPLIST_FILE = CommandCougar.xcodeproj/CommandCougarTests_Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "@loader_path/../Frameworks @loader_path/Frameworks";
-				OTHER_LDFLAGS = "$(inherited)";
-				OTHER_SWIFT_FLAGS = "$(inherited)";
-				TARGET_NAME = CommandCougarTests;
-			};
-			name = Release;
-		};
 		OBJ_4 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -344,6 +310,40 @@
 			};
 			name = Release;
 		};
+		OBJ_44 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PLATFORM_DIR)/Developer/Library/Frameworks",
+				);
+				HEADER_SEARCH_PATHS = "$(inherited)";
+				INFOPLIST_FILE = CommandCougar.xcodeproj/CommandCougarTests_Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "@loader_path/../Frameworks @loader_path/Frameworks";
+				OTHER_LDFLAGS = "$(inherited)";
+				OTHER_SWIFT_FLAGS = "$(inherited)";
+				TARGET_NAME = CommandCougarTests;
+			};
+			name = Debug;
+		};
+		OBJ_45 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PLATFORM_DIR)/Developer/Library/Frameworks",
+				);
+				HEADER_SEARCH_PATHS = "$(inherited)";
+				INFOPLIST_FILE = CommandCougar.xcodeproj/CommandCougarTests_Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "@loader_path/../Frameworks @loader_path/Frameworks";
+				OTHER_LDFLAGS = "$(inherited)";
+				OTHER_SWIFT_FLAGS = "$(inherited)";
+				TARGET_NAME = CommandCougarTests;
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -356,20 +356,20 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Debug;
 		};
-		OBJ_23 /* Build configuration list for PBXNativeTarget "CommandCougar" */ = {
+		OBJ_26 /* Build configuration list for PBXNativeTarget "CommandCougar" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				OBJ_24 /* Debug */,
-				OBJ_25 /* Release */,
+				OBJ_27 /* Debug */,
+				OBJ_28 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Debug;
 		};
-		OBJ_37 /* Build configuration list for PBXNativeTarget "CommandCougarTests" */ = {
+		OBJ_43 /* Build configuration list for PBXNativeTarget "CommandCougarTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				OBJ_38 /* Debug */,
-				OBJ_39 /* Release */,
+				OBJ_44 /* Debug */,
+				OBJ_45 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Debug;

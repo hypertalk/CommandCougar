@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "OBJ_22"
+               BlueprintIdentifier = "OBJ_25"
                BuildableName = "CommandCougar.framework"
                BlueprintName = "CommandCougar"
                ReferencedContainer = "container:CommandCougar.xcodeproj">
@@ -32,7 +32,7 @@
             skipped = "NO">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "OBJ_36"
+               BlueprintIdentifier = "OBJ_42"
                BuildableName = "CommandCougarTests.xctest"
                BlueprintName = "CommandCougarTests"
                ReferencedContainer = "container:CommandCougar.xcodeproj">
@@ -55,7 +55,7 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "OBJ_22"
+            BlueprintIdentifier = "OBJ_25"
             BuildableName = "CommandCougar.framework"
             BlueprintName = "CommandCougar"
             ReferencedContainer = "container:CommandCougar.xcodeproj">

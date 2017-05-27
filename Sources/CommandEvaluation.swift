@@ -121,6 +121,18 @@ public struct CommandEvaluation: CommandIndexable {
 	///
 	/// - Returns: The first parameter of the Command
 	/// - Throws: Throws invalidParameterCount if the Command does not have a first parameter
+	public func parameter(at index: Int) throws -> String {
+		guard index < parameters.count else {
+			throw CommandCougar.Errors.parameterAccessError("Parameter at index \(index) not found.")
+		}
+		return parameters[index]
+	}
+	
+	/// Returns the parameter at the given index for the Command
+	///
+	/// - Returns: The first parameter of the Command
+	/// - Throws: Throws invalidParameterCount if the Command does not have a first parameter
+	@available(*, deprecated, message: "Please use parameter(at) instead")
 	public func retrieveParameter(at index: Int) throws -> String {
 		guard index < parameters.count else {
 			throw CommandCougar.Errors.parameterAccessError("Parameter at index \(index) not found.")

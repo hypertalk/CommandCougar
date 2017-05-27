@@ -214,7 +214,8 @@ evaluation["package"]?.options["enable-prefetching"] // results in nil
 evaluation["package"]?["update"]?.options["repin"]?.flag.longName // results in "repin"
 ```
 
-To access parameters by index you may use `retrieveParamter(Int) throws -> String`. If the parameter does
+### Access with throw
+To access parameters by index you may use `parameter(at: Int) throws -> String`. If the parameter does
 not exist a `parameterAccessError` will be thrown.  
 
 This will turn:
@@ -226,10 +227,10 @@ func callback(evaluation: CommandEvaluation) throws {
 }
 ```
 
-Into: 
+Into:
 ``` swift
 func callback(evaluation: CommandEvaluation) throws {
-    let first = try evaluation.retriveParamter(at: 0)
+    let first = try evaluation.parameter(at: 0)
 }
 ```
 
