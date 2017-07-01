@@ -64,6 +64,16 @@ class CommandCougarTests: XCTestCase {
 		
 	}
 	
+	func testUsage() {
+		do {
+			let _ = try swiftCommand.evaluate(arguments: ["swift", "--help"])
+			let _ = try swiftCommand.evaluate(arguments: ["swift", "package", "--help"])
+			let _ = try swiftCommand.evaluate(arguments: ["swift", "package", "edit", "--help"])
+			let _ = try swiftCommand.evaluate(arguments: ["swift", "package", "update", "--help"])
+		}
+		catch { XCTAssert(false, "Error \(error)")  }
+	}
+	
 	func testFlagEquatability() {
 		
 		XCTAssertEqual(Option.Flag.short("v"), Option.Flag.both(short: "v", long: "verbose"))
