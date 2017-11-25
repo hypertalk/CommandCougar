@@ -178,7 +178,7 @@ public struct Command: CommandIndexable {
 		let commandEvaluation =  try subEvaluate(arguments:arguments.dropFirst().map { $0 })
 
 		// If help option is present in the command evaluation, print help.
-		if commandEvaluation.options.contains(where: { $0.flag == "help" }) {
+		if commandEvaluation.options.contains(where: { $0.flag == Option.help.flag }) {
 			print(help(superCommands: []))
 			return commandEvaluation
 		}
@@ -192,7 +192,7 @@ public struct Command: CommandIndexable {
 		while let next = current.subEvaluation {
 			current = next
 			
-			if current.options.contains(where: { $0.flag == "help" }) {
+			if current.options.contains(where: { $0.flag == Option.help.flag }) {
 				print(current.describer.help(superCommands: superCommands))
 			}
 			superCommands.append(current.describer)
@@ -228,7 +228,7 @@ public struct Command: CommandIndexable {
 				let option = OptionEvaluation(string: next) {
 				
 				// If option is help, stop evaluating
-				if option.flag == "help" {
+				if option.flag == Option.help.flag {
 					evaluation.options.append(option)
 					return evaluation
 				}
