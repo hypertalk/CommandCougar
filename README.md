@@ -21,6 +21,16 @@ An elegant pure Swift library for building command line applications.
 - Swift 4
 ---
 
+## Installation
+
+### [Swift Package Manager](https://github.com/apple/swift-package-manager)
+
+```swift
+dependencies: [
+.Package(url: "https://github.com/surfandneptune/CommandCougar.git", from: "1.0.0")
+]
+```
+
 ## Usage
   CommandCougar supports a main command as well as subcommands.  This is much like
   the swift package manager interface.  
@@ -284,16 +294,6 @@ SUM:                            11            133            411            451
 - If you **found a bug**, open an issue.
 - If you **have a feature request**, open an issue.
 - If you **want to contribute**, open an issue or submit a pull request.
-
-## Installation
-
-### [Swift Package Manager](https://github.com/apple/swift-package-manager)
-
-```swift
-dependencies: [
-    .Package(url: "https://github.com/surfandneptune/CommandCougar.git", majorVersion: 1)
-]
-```
 
 ## License
 
