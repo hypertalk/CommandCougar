@@ -78,7 +78,7 @@ public struct CommandEvaluation: CommandIndexable {
 	public func performCallbacks() throws {
 
 		// Do not perform callbacks if help is in any option
-		if allOptions.contains(where: { $0.flag == "help" }) {
+		if allOptions.contains(where: { $0.flag == Option.help.flag }) {
 			return
 		}
 		
