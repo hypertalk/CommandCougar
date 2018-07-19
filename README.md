@@ -10,7 +10,7 @@ An elegant pure Swift library for building command line applications.
 - [x] Auto generated help menus for main command and sub-commands.
 - [x] Help menu format is based on [swift package manager](https://github.com/apple/swift-package-manager)
 - [x] Supports multi command callbacks.
-- [x] Swift 3 compatibility
+- [x] Swift 4 compatibility
 - [x] Zero dependency
 - [x] Supports Linux and `swift build`
 
@@ -18,7 +18,7 @@ An elegant pure Swift library for building command line applications.
 
 - Mac OS X 10.10+ / Ubuntu 14.10
 - Xcode 8
-- Swift 3
+- Swift 4
 ---
 
 ## Usage
