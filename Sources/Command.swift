@@ -162,8 +162,8 @@ public struct Command: CommandIndexable {
 		}
 		
 		// Option flags must be unique i.e. they can't have the same shortNames or longNames
-		let shorts = options.flatMap ({ $0.flag.shortName })
-		let longs = options.flatMap ({ $0.flag.longName })
+		let shorts = options.compactMap ({ $0.flag.shortName })
+		let longs = options.compactMap ({ $0.flag.longName })
 		if shorts.count != Set(shorts).count, longs.count != Set(longs).count {
 			throw CommandCougar.Errors.validate("Duplicate option flag(s) for command \(name). Option flags must be unique.")
 		}

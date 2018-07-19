@@ -49,12 +49,12 @@ public struct OptionEvaluation: FlagIndexable, CustomStringConvertible {
 	///
 	/// - Parameter string: The string to parse
 	public init?(string: String) {
-		switch (string.characters.first?.asString, string.characters.second?.asString) {
+		switch (string.first?.asString, string.second?.asString) {
 			
 		// Parsed string is long flag
 		case (.some("-"), .some("-")):
 			
-			let split = string.characters.dropFirst(2).asString.components(separatedBy: "=")
+			let split = string.dropFirst(2).asString.components(separatedBy: "=")
 			
 			guard
 				let longName = split.first,
@@ -68,7 +68,7 @@ public struct OptionEvaluation: FlagIndexable, CustomStringConvertible {
 		// Parsed string is short flag
 		case (.some("-"), _):
 			
-			let split = string.characters.dropFirst().asString.components(separatedBy: "=")
+			let split = string.dropFirst().asString.components(separatedBy: "=")
 			
 			guard
 				let shortName = split.first,

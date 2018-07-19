@@ -35,7 +35,7 @@ public extension Array where Element: CommandIndexable {
 		get {
 			return first(where: { $0.name == commandName })
 		} set {
-			self = self.flatMap { c in
+			self = self.compactMap { c in
 				if c.name == commandName {
 					return newValue
 				}

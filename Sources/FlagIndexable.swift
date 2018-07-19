@@ -43,7 +43,7 @@ public extension Array where Element: FlagIndexable {
 		get {
 			return first(where: { $0.flag == flagName })
 		} set {
-			self = self.flatMap {
+			self = self.compactMap {
 				if $0.flag == flagName {
 					return newValue
 				} else {
@@ -61,7 +61,7 @@ public extension Array where Element: FlagIndexable {
 		get {
 			return first(where: { $0.flag == flag })
 		} set {
-			self = self.flatMap {
+			self = self.compactMap {
 				if $0.flag == flag {
 					return newValue
 				} else {

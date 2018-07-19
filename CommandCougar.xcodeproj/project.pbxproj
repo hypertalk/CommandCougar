@@ -6,6 +6,20 @@
 	objectVersion = 46;
 	objects = {
 
+/* Begin PBXAggregateTarget section */
+		"CommandCougar::CommandCougarPackageTests::ProductTarget" /* CommandCougarPackageTests */ = {
+			isa = PBXAggregateTarget;
+			buildConfigurationList = OBJ_49 /* Build configuration list for PBXAggregateTarget "CommandCougarPackageTests" */;
+			buildPhases = (
+			);
+			dependencies = (
+				OBJ_52 /* PBXTargetDependency */,
+			);
+			name = CommandCougarPackageTests;
+			productName = CommandCougarPackageTests;
+		};
+/* End PBXAggregateTarget section */
+
 /* Begin PBXBuildFile section */
 		OBJ_30 /* Command.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_8 /* Command.swift */; };
 		OBJ_31 /* CommandCougar.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_9 /* CommandCougar.swift */; };
@@ -18,21 +32,31 @@
 		OBJ_38 /* OptionEvaluation.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_16 /* OptionEvaluation.swift */; };
 		OBJ_39 /* Parameter.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_17 /* Parameter.swift */; };
 		OBJ_40 /* ParameterEvaluation.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_18 /* ParameterEvaluation.swift */; };
-		OBJ_47 /* CommandCougarTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_21 /* CommandCougarTests.swift */; };
-		OBJ_49 /* CommandCougar.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = OBJ_23 /* CommandCougar.framework */; };
+		OBJ_47 /* Package.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_6 /* Package.swift */; };
+		OBJ_58 /* CommandCougarTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_21 /* CommandCougarTests.swift */; };
+		OBJ_60 /* CommandCougar.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = "CommandCougar::CommandCougar::Product" /* CommandCougar.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		55A28ED51ED9AD7900178F59 /* PBXContainerItemProxy */ = {
+		52E23A732101394C0013B109 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = OBJ_1 /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = OBJ_25;
+			remoteGlobalIDString = "CommandCougar::CommandCougar";
 			remoteInfo = CommandCougar;
+		};
+		52E23A742101394D0013B109 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = OBJ_1 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = "CommandCougar::CommandCougarTests";
+			remoteInfo = CommandCougarTests;
 		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		"CommandCougar::CommandCougar::Product" /* CommandCougar.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = CommandCougar.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		"CommandCougar::CommandCougarTests::Product" /* CommandCougarTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; path = CommandCougarTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		OBJ_10 /* CommandEvaluation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommandEvaluation.swift; sourceTree = "<group>"; };
 		OBJ_11 /* CommandIndexable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommandIndexable.swift; sourceTree = "<group>"; };
 		OBJ_12 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
@@ -43,8 +67,6 @@
 		OBJ_17 /* Parameter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Parameter.swift; sourceTree = "<group>"; };
 		OBJ_18 /* ParameterEvaluation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParameterEvaluation.swift; sourceTree = "<group>"; };
 		OBJ_21 /* CommandCougarTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommandCougarTests.swift; sourceTree = "<group>"; };
-		OBJ_23 /* CommandCougar.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = CommandCougar.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		OBJ_24 /* CommandCougarTests.xctest */ = {isa = PBXFileReference; lastKnownFileType = file; path = CommandCougarTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		OBJ_6 /* Package.swift */ = {isa = PBXFileReference; explicitFileType = sourcecode.swift; path = Package.swift; sourceTree = "<group>"; };
 		OBJ_8 /* Command.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Command.swift; sourceTree = "<group>"; };
 		OBJ_9 /* CommandCougar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommandCougar.swift; sourceTree = "<group>"; };
@@ -58,11 +80,11 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		OBJ_48 /* Frameworks */ = {
+		OBJ_59 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 0;
 			files = (
-				OBJ_49 /* CommandCougar.framework in Frameworks */,
+				OBJ_60 /* CommandCougar.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -89,8 +111,8 @@
 		OBJ_22 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				OBJ_23 /* CommandCougar.framework */,
-				OBJ_24 /* CommandCougarTests.xctest */,
+				"CommandCougar::CommandCougarTests::Product" /* CommandCougarTests.xctest */,
+				"CommandCougar::CommandCougar::Product" /* CommandCougar.framework */,
 			);
 			name = Products;
 			sourceTree = BUILT_PRODUCTS_DIR;
@@ -127,7 +149,7 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		OBJ_25 /* CommandCougar */ = {
+		"CommandCougar::CommandCougar" /* CommandCougar */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = OBJ_26 /* Build configuration list for PBXNativeTarget "CommandCougar" */;
 			buildPhases = (
@@ -140,25 +162,39 @@
 			);
 			name = CommandCougar;
 			productName = CommandCougar;
-			productReference = OBJ_23 /* CommandCougar.framework */;
+			productReference = "CommandCougar::CommandCougar::Product" /* CommandCougar.framework */;
 			productType = "com.apple.product-type.framework";
 		};
-		OBJ_42 /* CommandCougarTests */ = {
+		"CommandCougar::CommandCougarTests" /* CommandCougarTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = OBJ_43 /* Build configuration list for PBXNativeTarget "CommandCougarTests" */;
+			buildConfigurationList = OBJ_54 /* Build configuration list for PBXNativeTarget "CommandCougarTests" */;
 			buildPhases = (
-				OBJ_46 /* Sources */,
-				OBJ_48 /* Frameworks */,
+				OBJ_57 /* Sources */,
+				OBJ_59 /* Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				OBJ_50 /* PBXTargetDependency */,
+				OBJ_61 /* PBXTargetDependency */,
 			);
 			name = CommandCougarTests;
 			productName = CommandCougarTests;
-			productReference = OBJ_24 /* CommandCougarTests.xctest */;
+			productReference = "CommandCougar::CommandCougarTests::Product" /* CommandCougarTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		"CommandCougar::SwiftPMPackageDescription" /* CommandCougarPackageDescription */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = OBJ_43 /* Build configuration list for PBXNativeTarget "CommandCougarPackageDescription" */;
+			buildPhases = (
+				OBJ_46 /* Sources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = CommandCougarPackageDescription;
+			productName = CommandCougarPackageDescription;
+			productType = "com.apple.product-type.framework";
 		};
 /* End PBXNativeTarget section */
 
@@ -167,6 +203,14 @@
 			isa = PBXProject;
 			attributes = {
 				LastUpgradeCheck = 9999;
+				TargetAttributes = {
+					"CommandCougar::CommandCougar" = {
+						LastSwiftMigration = 1000;
+					};
+					"CommandCougar::CommandCougarTests" = {
+						LastSwiftMigration = 1000;
+					};
+				};
 			};
 			buildConfigurationList = OBJ_2 /* Build configuration list for PBXProject "CommandCougar" */;
 			compatibilityVersion = "Xcode 3.2";
@@ -180,8 +224,10 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				OBJ_25 /* CommandCougar */,
-				OBJ_42 /* CommandCougarTests */,
+				"CommandCougar::CommandCougar" /* CommandCougar */,
+				"CommandCougar::SwiftPMPackageDescription" /* CommandCougarPackageDescription */,
+				"CommandCougar::CommandCougarPackageTests::ProductTarget" /* CommandCougarPackageTests */,
+				"CommandCougar::CommandCougarTests" /* CommandCougarTests */,
 			);
 		};
 /* End PBXProject section */
@@ -209,17 +255,30 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 0;
 			files = (
-				OBJ_47 /* CommandCougarTests.swift in Sources */,
+				OBJ_47 /* Package.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		OBJ_57 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 0;
+			files = (
+				OBJ_58 /* CommandCougarTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		OBJ_50 /* PBXTargetDependency */ = {
+		OBJ_52 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = OBJ_25 /* CommandCougar */;
-			targetProxy = 55A28ED51ED9AD7900178F59 /* PBXContainerItemProxy */;
+			target = "CommandCougar::CommandCougarTests" /* CommandCougarTests */;
+			targetProxy = 52E23A742101394D0013B109 /* PBXContainerItemProxy */;
+		};
+		OBJ_61 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = "CommandCougar::CommandCougar" /* CommandCougar */;
+			targetProxy = 52E23A732101394C0013B109 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -234,13 +293,16 @@
 				);
 				HEADER_SEARCH_PATHS = "$(inherited)";
 				INFOPLIST_FILE = CommandCougar.xcodeproj/CommandCougar_Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(TOOLCHAIN_DIR)/usr/lib/swift/macosx";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) $(TOOLCHAIN_DIR)/usr/lib/swift/macosx";
+				OTHER_CFLAGS = "$(inherited)";
 				OTHER_LDFLAGS = "$(inherited)";
 				OTHER_SWIFT_FLAGS = "$(inherited)";
 				PRODUCT_BUNDLE_IDENTIFIER = CommandCougar;
 				PRODUCT_MODULE_NAME = "$(TARGET_NAME:c99extidentifier)";
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
+				SWIFT_SWIFT3_OBJC_INFERENCE = On;
+				SWIFT_VERSION = 4.2;
 				TARGET_NAME = CommandCougar;
 			};
 			name = Debug;
@@ -255,13 +317,16 @@
 				);
 				HEADER_SEARCH_PATHS = "$(inherited)";
 				INFOPLIST_FILE = CommandCougar.xcodeproj/CommandCougar_Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(TOOLCHAIN_DIR)/usr/lib/swift/macosx";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) $(TOOLCHAIN_DIR)/usr/lib/swift/macosx";
+				OTHER_CFLAGS = "$(inherited)";
 				OTHER_LDFLAGS = "$(inherited)";
 				OTHER_SWIFT_FLAGS = "$(inherited)";
 				PRODUCT_BUNDLE_IDENTIFIER = CommandCougar;
 				PRODUCT_MODULE_NAME = "$(TARGET_NAME:c99extidentifier)";
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
+				SWIFT_SWIFT3_OBJC_INFERENCE = On;
+				SWIFT_VERSION = 4.2;
 				TARGET_NAME = CommandCougar;
 			};
 			name = Release;
@@ -284,7 +349,6 @@
 				SUPPORTED_PLATFORMS = "macosx iphoneos iphonesimulator appletvos appletvsimulator watchos watchsimulator";
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = SWIFT_PACKAGE;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				SWIFT_VERSION = 3.0;
 				USE_HEADERMAP = NO;
 			};
 			name = Debug;
@@ -305,7 +369,6 @@
 				SUPPORTED_PLATFORMS = "macosx iphoneos iphonesimulator appletvos appletvsimulator watchos watchsimulator";
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = SWIFT_PACKAGE;
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
-				SWIFT_VERSION = 3.0;
 				USE_HEADERMAP = NO;
 			};
 			name = Release;
@@ -313,21 +376,34 @@
 		OBJ_44 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PLATFORM_DIR)/Developer/Library/Frameworks",
-				);
-				HEADER_SEARCH_PATHS = "$(inherited)";
-				INFOPLIST_FILE = CommandCougar.xcodeproj/CommandCougarTests_Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "@loader_path/../Frameworks @loader_path/Frameworks";
-				OTHER_LDFLAGS = "$(inherited)";
-				OTHER_SWIFT_FLAGS = "$(inherited)";
-				TARGET_NAME = CommandCougarTests;
+				LD = /usr/bin/true;
+				OTHER_SWIFT_FLAGS = "-swift-version 3 -I $(TOOLCHAIN_DIR)/usr/lib/swift/pm/3 -target x86_64-apple-macosx10.10 -sdk /Library/Developer/CommandLineTools/SDKs/MacOSX10.13.sdk";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
 		};
 		OBJ_45 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				LD = /usr/bin/true;
+				OTHER_SWIFT_FLAGS = "-swift-version 3 -I $(TOOLCHAIN_DIR)/usr/lib/swift/pm/3 -target x86_64-apple-macosx10.10 -sdk /Library/Developer/CommandLineTools/SDKs/MacOSX10.13.sdk";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Release;
+		};
+		OBJ_50 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+			};
+			name = Debug;
+		};
+		OBJ_51 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+			};
+			name = Release;
+		};
+		OBJ_55 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
@@ -337,9 +413,32 @@
 				);
 				HEADER_SEARCH_PATHS = "$(inherited)";
 				INFOPLIST_FILE = CommandCougar.xcodeproj/CommandCougarTests_Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "@loader_path/../Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @loader_path/../Frameworks @loader_path/Frameworks";
+				OTHER_CFLAGS = "$(inherited)";
 				OTHER_LDFLAGS = "$(inherited)";
 				OTHER_SWIFT_FLAGS = "$(inherited)";
+				SWIFT_SWIFT3_OBJC_INFERENCE = On;
+				SWIFT_VERSION = 4.2;
+				TARGET_NAME = CommandCougarTests;
+			};
+			name = Debug;
+		};
+		OBJ_56 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PLATFORM_DIR)/Developer/Library/Frameworks",
+				);
+				HEADER_SEARCH_PATHS = "$(inherited)";
+				INFOPLIST_FILE = CommandCougar.xcodeproj/CommandCougarTests_Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @loader_path/../Frameworks @loader_path/Frameworks";
+				OTHER_CFLAGS = "$(inherited)";
+				OTHER_LDFLAGS = "$(inherited)";
+				OTHER_SWIFT_FLAGS = "$(inherited)";
+				SWIFT_SWIFT3_OBJC_INFERENCE = On;
+				SWIFT_VERSION = 4.2;
 				TARGET_NAME = CommandCougarTests;
 			};
 			name = Release;
@@ -354,7 +453,7 @@
 				OBJ_4 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Debug;
+			defaultConfigurationName = Release;
 		};
 		OBJ_26 /* Build configuration list for PBXNativeTarget "CommandCougar" */ = {
 			isa = XCConfigurationList;
@@ -363,16 +462,34 @@
 				OBJ_28 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Debug;
+			defaultConfigurationName = Release;
 		};
-		OBJ_43 /* Build configuration list for PBXNativeTarget "CommandCougarTests" */ = {
+		OBJ_43 /* Build configuration list for PBXNativeTarget "CommandCougarPackageDescription" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				OBJ_44 /* Debug */,
 				OBJ_45 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Debug;
+			defaultConfigurationName = Release;
+		};
+		OBJ_49 /* Build configuration list for PBXAggregateTarget "CommandCougarPackageTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				OBJ_50 /* Debug */,
+				OBJ_51 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		OBJ_54 /* Build configuration list for PBXNativeTarget "CommandCougarTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				OBJ_55 /* Debug */,
+				OBJ_56 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
