@@ -26,6 +26,7 @@
 import Foundation
 
 public enum Parameter: Equatable {
+
 	case required(String)
 	case optional(String)
 	
